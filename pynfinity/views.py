@@ -16,8 +16,6 @@ except Exception:
 from flask import Flask
 app = Flask(__name__)
 
-import pynfinity.views
-
 user_system = ""
 
 def create_connection(db_file):
