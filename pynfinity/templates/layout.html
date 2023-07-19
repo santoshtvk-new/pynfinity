@@ -3,14 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - My Flask Application</title>
+    <title>{{ title }} - py∞</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Edu+VIC+WA+NT+Beginner:wght@500&family=Handlee&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee%3Aital%2Cwght%400%2C400%3B1%2C400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="bg/l.svg" />
+    <link rel="stylesheet" type="text/css" href="/static/content/ss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@700&family=Loved+by+the+King&family=Pacifico&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3012929005735832" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top barstyle">
+
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,13 +31,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">Application name</a>
+                <a href="/" class="navbar-brand sticky-title">Pynfinity</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <ul class="nav navbar-nav sticky-menu">
+                    <li><a href="{{ url_for('about') }}">🖐 <span>H</span>i, I'm ... !</a></li>
+                    <li><a href="{{ url_for('experiment') }}">🍴 <span>E</span>xperiments </a></li>
+                    <li><a href="{{ url_for('home') }}">💻 <span>L</span>et's Learn Together</a></li>
+                    <li><a href="{{ url_for('problems') }}">🚀 <span>L</span>ot's of Challenges</a></li>
+                    <li><a href="{{ url_for('contact') }}">🤝 <span>O</span>k, Time to Meet ?</a></li>
                 </ul>
             </div>
         </div>
@@ -34,13 +49,15 @@
         {% block content %}{% endblock %}
         <hr />
         <footer>
-            <p>&copy; {{ year }} - My Flask Application</p>
+            <p>&copy; santoshtvk - {{ year }}</p>
         </footer>
     </div>
 
     <script src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>
     <script src="/static/scripts/respond.js"></script>
+    <script src="/static/scripts/app.js"></script>
+    <script src="/static/scripts/ss.js"></script>
     {% block scripts %}{% endblock %}
 
 </body>

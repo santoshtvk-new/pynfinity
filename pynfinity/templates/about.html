@@ -1,10 +1,55 @@
-{% extends "layout.html" %}
+﻿{% extends "layout.html" %}
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+<div class="row">
+    <div class="col-md-12">
+        <div id="cursorText">🙏 Hello</div>
+        <ul id="intro">
+            <li>I'm <span>Venkata Santosh</span><br></li>
+            <li>
+                Python Automation Engineer with expertise in Embedded and Machine Learning over 7+ Years in Medical, Defence and IoT Domains.
+            </li>
+            <li>
+                    I have Automated over 10+ projects using Python, Robot Framework, Linux, Android and Databases such as Azure
+                Cosmos and SQL DB.
+                    Additionally, gained significant experience in CI-CD related projects and proven ability to lead a
+                    team.
+                Developed RTOS-based embedded C++ applications, and also gained solid knowledge in Problem Solving, and
+                Data Structures & Algorithms.
+            </li>
+        </ul>
+    </div>
+</div>
 
-<p>Use this area to provide additional information.</p>
+<div class="row lastrow">
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col-md-3">
+                <a class="social_icons" href='https://wa.me/917485929752?text=Lets%20Connect%20@%20pynfinity'><img alt="whatsapp" width="30%" src="static/bg/whtsapp.svg" /></a>
+            </div>
+            <div class="col-md-3">
+                <a class="social_icons" href='https://www.linkedin.com/in/santoshtvk/'><img alt="linkedin" width="30%" src="static/bg/linkedin.svg" /></a>
+            </div>
+            <div class="col-md-3">
+                <a class="social_icons" href='https://twitter.com/santoshtvk'><img alt="twitter" width="30%" src="static/bg/twitter.svg" /></a>
+            </div>
+            <div class="col-md-3">
+                <a class="social_icons" href='https://www.instagram.com/santoshtvk/'><img alt="instagram" width="30%" src="static/bg/insta.svg" /></a>
+            </div>
+        </div>
+        </div>
+    <div class="col-md-5">
+        <div id="downloadresume">
+            <a href='http://pynfinity.com/resume.pdf' target="_blank" rel="noopener noreferrer">
+                📜 Download My Resume 📜
+            </a>
+        </div>
+    </div>
+</div>
 
+<!--
+    <h2>{{ title }}.</h2>
+    <h3>{{ message }}</h3>
+-->
 {% endblock %}

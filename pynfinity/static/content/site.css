@@ -1,8 +1,32 @@
+:root {
+    --bg: FloralWhite;
+    --softbg: Aquamarine;
+    --nbg1: #3D1C51;
+    --nbg2: #D7798B;
+    --blackish: burlywood;
+    --whitish: cornsilk;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: linear-gradient(var(--nbg2), var(--bg), var(--nbg2));
 }
 
+@media (min-width: 768px) {
+    .body-content {
+        margin-top: 150px;
+    }
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+    border: 0px
+}
+
+.jumbotron {
+    border-left: 15px solid #000;
+    background:transparent;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -39,4 +63,192 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
     display: none;
+}
+
+.barstyle {
+    background: transparent;
+    background-image: url("../bg/float.svg");
+    background-repeat: repeat-x;
+    background-size: 50%;
+}
+
+
+@media (max-width: 768px) {
+    .barstyle {
+        background: var(--nbg2);
+    }
+
+    .sticky-menu li {
+        margin-right: 2%;
+        margin-bottom: 0px;
+        margin-left: 2%;
+    }
+}
+
+.sticky-title {
+    font-family: 'Caveat', cursive;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--whitish) !important;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.sticky-menu li a {
+    text-decoration: none;
+    color: var(--whitish) !important;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.5rem;
+}
+
+.sticky-menu li a span {
+    color: #000;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.sticky-menu li {
+    border: 2px solid cornsilk;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 1px;
+    
+}
+
+.sticky-menu li:hover {
+    box-shadow: 2px 4px 8px #000;
+    z-index: 8;
+}
+
+#cursorText {
+    font-size: 3.5rem;
+    margin-top: 5%;
+    width: max-content;
+    border-right: 2px solid #000;
+    animation: blinker 2s linear forwards infinite;
+}
+
+.full-page {
+    height: 100vh;
+}
+
+@keyframes blinker {
+    0% {
+        border-color: #000;
+    }
+
+    20% {
+        border-color: transparent;
+    }
+
+    40% {
+        border-color: #000;
+    }
+
+    60% {
+        border-color: transparent;
+    }
+
+    80% {
+        border-color: #000;
+    }
+
+    100% {
+        border-color: #000;
+    }
+}
+
+#intro {
+    margin-top: 20px;
+    list-style: none;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2rem;
+    text-indent:inherit;
+    z-index: 3;
+}
+
+#intro span {
+    color: var(--nbg1);
+    font-weight: bold;
+}
+
+#intro li {
+    margin-bottom: 50px;
+}
+
+.lastrow{
+    margin-top: 20vh;
+}
+
+.jumbotron h1 {
+    list-style: none;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2rem;
+}
+
+.jumbotron p {
+    list-style: none;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+}
+
+
+#goodies {
+    width: 100%;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 5%;
+    margin: 5%;
+}
+
+#downloadresume a {
+    text-decoration: none;
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    color: var(--whitish) !important;
+    text-shadow: 2px 2px #000;
+}
+
+#downloadresume {
+    text-align: center;
+}
+
+#downloadresume:hover {
+    border-top: 2px solid var(--whitish);
+    border-bottom: 2px solid var(--whitish);
+}
+
+footer {
+    float:right;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.card img{
+    padding: 10%;
+}
+.card .container h4 {
+    font-family: 'Comfortaa', cursive;
+    font-size: 3rem;
+}
+
+.card .container p {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
 }

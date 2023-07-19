@@ -37,10 +37,16 @@
     <Folder Include="pynfinity\static\" />
     <Folder Include="pynfinity\static\content\" />
     <Folder Include="pynfinity\static\fonts\" />
+    <Folder Include="pynfinity\static\bg\" />
     <Folder Include="pynfinity\static\scripts\" />
     <Folder Include="pynfinity\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pynfinity\static\bg\emb.svg" />
+    <Content Include="pynfinity\static\bg\linux.svg" />
+    <Content Include="pynfinity\static\bg\py.svg" />
+    <Content Include="pynfinity\static\scripts\app.js" />
+    <Content Include="pynfinity\templates\experiment.html" />
     <Content Include="requirements.txt" />
     <Content Include="pynfinity\static\content\bootstrap.css" />
     <Content Include="pynfinity\static\content\bootstrap.min.css" />

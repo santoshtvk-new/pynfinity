@@ -1,33 +1,54 @@
-{% extends "layout.html" %}
+﻿{% extends "layout.html" %}
 
 {% block content %}
 
 <div class="jumbotron">
-    <h1>Flask</h1>
-    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <center>
+        <h1>Hello {{creator}}! <br>Let's Learn Together </h1>
+
+    </center>
+    
+
+    
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
+        <div class="card">
+            <img src="static/bg/py.svg" alt="python" style="width:200px">
+            <div class="container">
+                <h4><b>Python: Novice to Expert</b></h4>
+                <p>Explore Python skills with our interactive learning platform. <br>Interactive quizzes help you track your understanding Strengthen understanding of Webapps, Automation 
+                tools, Regular expressions, OOPS and many other.</p>
+            </div>
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
+        <div class="card">
+            <img src="static/bg/linux.svg" alt="linux" style="width:200px">
+            <div class="container">
+                <h4><b>Linux: Novice to Expert</b></h4>
+                <p>Explore Linux skills with our interactive learning platform. <br>With concise notes and engaging quizzes, Understand Shell Commands, Networking and Open Source Customization</p>
+            </div>
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+        <div class="card">
+            <img src="static/bg/emb.svg" alt="embedded" style="width:200px">
+            <div class="container">
+                <h4><b>Embedded Systems: Novice to Expert</b></h4>
+                <p>Explore Embedded skills with our C/C++, concise notes and engaging quizzes, <br>Dwell deeper on understanding with RTOS, Kernel and Industrial Applications</p>
+            </div>
+        </div>
     </div>
 </div>
 
-{% endblock %}
+<div class="row">
+    <div class="col-md-12">
+
+        <p>Welcome to our engaging learning environment! Learn new IT skills and deepen your understanding of Python, Linux, C, and C++. To assist you with understanding the principles of these technologies, our portal provides clear notes and interesting quizzes. Our user-friendly approach simplifies complicated topics so that everyone can learn, regardless of their level of experience. With the help of our interactive tests, you can test your knowledge and review your understanding. Start your journey today and unlock a broad range of IT skills with us! </p>
+
+    </div>
+</div>
+
+    {% endblock %}

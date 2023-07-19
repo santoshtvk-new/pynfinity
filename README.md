@@ -1,1 +1,3 @@
 # pynfinity
+
+Its Educational Channel 
