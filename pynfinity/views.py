@@ -5,10 +5,14 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template, request
 from pynfinity import app
-import requests
-import sqlite3
-from sqlite3 import Error
-from getmac import get_mac_address as gma
+try:
+    import requests
+    import sqlite3
+    from sqlite3 import Error
+    from getmac import get_mac_address as gma
+except Exception:
+    pass
+
 user_system = ""
 
 def create_connection(db_file):
