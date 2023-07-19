@@ -3,7 +3,7 @@ This script runs the pynfinity application using a development server.
 """
 
 from os import environ
-from pynfinity import app
+from pynfinity.views import app
 
 if __name__ == '__main__':
     HOST = environ.get('SERVER_HOST', 'localhost')

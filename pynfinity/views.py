@@ -4,7 +4,6 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template, request
-from pynfinity import app
 try:
     import requests
     import sqlite3
@@ -12,6 +11,12 @@ try:
     from getmac import get_mac_address as gma
 except Exception:
     pass
+
+
+from flask import Flask
+app = Flask(__name__)
+
+import pynfinity.views
 
 user_system = ""
 
