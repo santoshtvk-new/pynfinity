@@ -5,18 +5,14 @@
     --nbg2: #D7798B;
     --blackish: burlywood;
     --whitish: cornsilk;
+    --choco: #532E00;
+    --choco2: #A0522D;
 }
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
     background: linear-gradient(var(--nbg2), var(--bg), var(--nbg2));
-}
-
-@media (min-width: 768px) {
-    .body-content {
-        margin-top: 150px;
-    }
 }
 
 .navbar-fixed-top, .navbar-fixed-bottom {
@@ -27,20 +23,17 @@ body {
     border-left: 15px solid #000;
     background:transparent;
 }
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
 
-/* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
 }
@@ -69,31 +62,22 @@ input[type="checkbox"].input-validation-error {
     background: transparent;
     background-image: url("../bg/float.svg");
     background-repeat: repeat-x;
-    background-size: 50%;
-}
-
-
-@media (max-width: 768px) {
-    .barstyle {
-        background: var(--nbg2);
-    }
-
-    .sticky-menu li {
-        margin-right: 2%;
-        margin-bottom: 0px;
-        margin-left: 2%;
-    }
+    padding-bottom: 10vh;
 }
 
 .sticky-title {
     font-family: 'Caveat', cursive;
-    text-align: center;
     font-size: 3rem;
     color: var(--whitish) !important;
-    text-shadow: 2px 2px #000;
-    margin-bottom: 10px;
-    margin-right: 5px;
+    text-shadow: 1px 2px #000;
+    margin-bottom: 2px;
+    margin-right: 2px;
 }
+
+    .sticky-title img {
+        width: 50px;
+        filter: drop-shadow(3px 3px 2px rgb(255 255 255));
+    }
 
 .sticky-menu li a {
     text-decoration: none;
@@ -109,17 +93,18 @@ input[type="checkbox"].input-validation-error {
     font-size: 1.5rem;
 }
 
+
 .sticky-menu li {
-    border: 2px solid cornsilk;
-    border-radius: 4px;
-    margin-right: 8px;
-    margin-bottom: 8px;
+    border: 1px solid cornsilk;
+    border-radius: 5px;
+    margin-right: 1px;
+    margin-bottom: 2px;
     padding: 1px;
     
 }
 
 .sticky-menu li:hover {
-    box-shadow: 2px 4px 8px #000;
+    box-shadow: 2px 2px 4px #000;
     z-index: 8;
 }
 
@@ -130,6 +115,7 @@ input[type="checkbox"].input-validation-error {
     border-right: 2px solid #000;
     animation: blinker 2s linear forwards infinite;
 }
+
 
 .full-page {
     height: 100vh;
@@ -251,4 +237,23 @@ footer {
 .card .container p {
     font-family: 'Caveat', cursive;
     font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    #menu_area {
+        background: linear-gradient(to bottom right, var(--choco), transparent);
+        padding: 10%;
+    }
+}
+
+@media (max-width: 1205px) {
+    #logoname {
+    display:none;
+    }
+}
+
+
+
+.navbar-header, .navbar-header:before, .navbar-header:after {
+border:0px !important;
 }

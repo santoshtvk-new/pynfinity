@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - py∞</title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='content/bootstrap.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='content/bootstrap.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='content/site.css')}}" />
     <script src="{{url_for('static', filename='scripts/modernizr-2.6.2.js')}}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,25 +27,34 @@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <center>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        Menu
+                    </center>
                 </button>
-                <a href="/" class="navbar-brand sticky-title">Pynfinity</a>
+                <a href="/" class="navbar-brand sticky-title"><img src="static/bg/l.svg"/><span id="logoname">Pynfinity</span></a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav sticky-menu">
-                    <li><a href="{{ url_for('about') }}">🖐 <span>H</span>i, I'm ... !</a></li>
-                    <li><a href="{{ url_for('experiment') }}">🍴 <span>E</span>xperiments </a></li>
-                    <li><a href="{{ url_for('home') }}">💻 <span>L</span>et's Learn Together</a></li>
-                    <li><a href="{{ url_for('problems') }}">🚀 <span>L</span>ot's of Challenges</a></li>
-                    <li><a href="{{ url_for('contact') }}">🤝 <span>O</span>k, Time to Meet ?</a></li>
-                </ul>
+            <div class="navbar-collapse collapse" id="menu_area">
+                <center>
+                    <ul class="nav navbar-nav sticky-menu">
+
+                        <li><a id="h" href="{{ url_for('about') }}">🖐 <span>H</span>i, I'm ... !</a></li>
+                        <li><a id="e" href="{{ url_for('experiment') }}">🍴 <span>E</span>xperiments </a></li>
+                        <li><a id="l" href="{{ url_for('home') }}">💻 <span>L</span>et's Learn Together</a></li>
+                        <li><a id="ll" href="{{ url_for('problems') }}">🚀 <span>L</span>ot's of Challenges</a></li>
+                        <li><a id="o" href="{{ url_for('contact') }}">🤝 <span>O</span>k, Time to Meet ?</a></li>
+                    </ul>
+                </center>
+                
             </div>
         </div>
     </div>
 
+
     <div class="container body-content">
+        <p id="testsize"></p>
         {% block content %}{% endblock %}
         <hr />
         <footer>
@@ -57,7 +66,6 @@
     <script src="{{url_for('static', filename='scripts/bootstrap.js')}}"></script>
     <script src="{{url_for('static', filename='scripts/respond.js')}}"></script>
     <script src="{{url_for('static', filename='scripts/app.js')}}"></script>
-    <script src="{{url_for('static', filename='scripts/ss.js')}}"></script>
     {% block scripts %}{% endblock %}
 
 </body>
