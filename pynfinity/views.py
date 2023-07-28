@@ -3,8 +3,10 @@ Routes and views for the flask application.
 """
 from datetime import datetime
 from flask import render_template, request, jsonify
-import pynfinity.utility as ut
-
+try:
+    import pynfinity.utility as ut
+except ModuleNotFoundError:
+    import utility as ut
 
 from flask import Flask
 app = Flask(__name__)
