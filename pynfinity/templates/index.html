@@ -4,13 +4,36 @@
 
 <div class="jumbotron">
     <center>
-        <h1>Hello {{creator}}! <br>Let's Learn Together </h1>
-
+        <h1>Hello {{creator}}!<br></h1>
+        <p>Let's Learn Together</p>
     </center>
-    
-
-    
 </div>
+
+<div class="row">
+    <div class="col-sm-4">
+        
+    </div>
+    <div class="col-sm-8">
+        <center>
+            <div id="word_container">
+                <div>
+                    <div id="deck">Word of the day! 🔄️</div>
+                    <label for="input" class="searchword">Online-Dictionary</label>
+                    <input id="search_word" class="searchword" type="text" value="Welcome" name="search">
+                    <img onclick="findout()" id="sb" src="static/bg/search.svg" alt="search-symbol" />
+                </div>
+                <div id="wordperday">
+                    <h2 id="title_word" onclick="playphonetics()">HELLO 🔊</h2>
+                    <audio id="phonetics" src=""></audio>
+                    <div id="explaination">
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+</div>
+
+
 
 <div class="row">
     <div class="col-md-4">

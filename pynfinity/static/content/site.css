@@ -19,10 +19,7 @@ body {
     border: 0px
 }
 
-.jumbotron {
-    border-left: 15px solid #000;
-    background:transparent;
-}
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -74,10 +71,10 @@ input[type="checkbox"].input-validation-error {
     margin-right: 2px;
 }
 
-    .sticky-title img {
-        width: 50px;
-        filter: drop-shadow(3px 3px 2px rgb(255 255 255));
-    }
+.sticky-title img {
+    width: 50px;
+    filter: drop-shadow(3px 3px 2px rgb(255 255 255));
+}
 
 .sticky-menu li a {
     text-decoration: none;
@@ -170,15 +167,22 @@ input[type="checkbox"].input-validation-error {
 }
 
 .jumbotron h1 {
-    list-style: none;
     font-family: 'Comfortaa', cursive;
-    font-size: 2rem;
+    font-size: 4rem;
+}
+
+.jumbotron {
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+@font-face {
+    font-family: Laziness;
+    src: url(Laziness.otf);
 }
 
 .jumbotron p {
-    list-style: none;
-    font-family: 'Caveat', cursive;
-    font-size: 2rem;
+    font-family: Laziness;
+    font-size: 5rem;
 }
 
 
@@ -257,3 +261,64 @@ footer {
 .navbar-header, .navbar-header:before, .navbar-header:after {
 border:0px !important;
 }
+
+#word_container {
+    padding: 5px;
+    width: 80%;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    margin-bottom: 10vh;
+}
+
+#wordperday {
+    padding: 5px;
+    width: 80%;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+}
+#deck {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2rem;
+    background: #eeeeee;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#sb {
+    padding: 2px;
+    width: 40px;
+    border: none;
+}
+
+#sb:hover {
+    transform:scale(1.2);
+}
+input {
+    border: none;
+    padding: 3px;
+    font-family: Handlee;
+    border-radius: 0.4rem;
+    width:100%;
+}
+input::placeholder {
+    color: #B0BEC5;
+}
+
+#title_word {
+    box-shadow: rgba(0, 0, 0, 0.95) 0px 25px 20px -20px;
+    cursor: pointer;
+}
+
+#explaination ol li, #explaination ol li ol li {
+    text-align: left;
+}
+
+    /*
+list-style:none;
+list-style-type: none;
+    linear-gradient(FloralWhite, transparent);
+*/
+    #explaination ol, #explaination ol li ol {
+        padding: 0;
+        list-style-type: none;
+    }
+
