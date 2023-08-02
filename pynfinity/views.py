@@ -71,6 +71,32 @@ def about():
         'about.html',
         title='About',
         year=datetime.now().year,
-        message='Your application description page.'
+        message='Few points about me...'
     )
 
+@app.route('/learn/git')
+def gitcmds():
+    return render_template(
+        'git.html',
+        title='Git Commands Tutorial',
+        year=datetime.now().year,
+        message='Master yourself with Git Basics to Advance'
+    )
+
+@app.route('/learn/linux')
+def lnxcmds():
+    return render_template(
+        'linux.html',
+        title='Linux Commands Tutorial',
+        year=datetime.now().year,
+        message='Master yourself with Linux Shell Commands'
+    )
+
+@app.route('/learn/embedded_systems')
+def embcmds():
+    return render_template(
+        'embedded.html',
+        title='Embedded Systems Tutorial',
+        year=datetime.now().year,
+        message='Master yourself with Concepts of Embedded Systems'
+    )

@@ -2,3 +2,45 @@ let wordlist = ["abate", "aberrant", "abjure", "abscond", "abstain", "acumen", "
 
 const randomElement = wordlist[Math.floor(Math.random() * wordlist.length)];
 $("#search_word").val(randomElement);
+
+google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.setOnLoadCallback(drawexps);
+google.charts.setOnLoadCallback(drawskills);
+
+function drawexps() {
+    var data = new google.visualization.arrayToDataTable([
+        ['Organization', 'Year\'s of Experience'],
+        ['HGS', 0.8],
+        ['Galada Power', 1],
+        ['Defence RCI', 3],
+        ['Qualcomm', 2],
+        ['Signant Health', 2.3]
+    ]);
+
+    var options = { 'title': 'Experiences'};
+    var chart = new google.visualization.PieChart(document.getElementById('expchart'));
+    chart.draw(data, options);
+}
+
+function drawskills() {
+    var data = google.visualization.arrayToDataTable([
+        ['Skills', 'Rated-Myself (0-10)'],
+        ['Python', 9],
+        ['SQL', 8],
+        ['Linux Shell', 7],
+        ['Git', 8.5],
+        ['Jenkins/Docker CI-CD', 6],
+        ['C++', 5],
+        ['Embedded Systems', 7.5],
+        ['Android App development', 4],
+        ['Machine Learning', 6]
+    ]);
+
+    var options = { 'title': 'Skills', pieHole: 0.4 };
+    var chart = new google.visualization.PieChart(document.getElementById('skchart'));
+    chart.draw(data, options);
+}
+
+function gitclasses() {
+    window.open("{{ url_for('gitcmds') }}", "_blank");
+}

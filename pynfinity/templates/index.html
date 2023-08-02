@@ -5,24 +5,43 @@
 <div class="jumbotron">
     <center>
         <h1>Hello {{creator}}!<br></h1>
-        <p>Let's Learn Together</p>
     </center>
 </div>
 
 <div class="row">
-    <div class="col-sm-4">
-        
+    <div class="col-sm-12" id="animate_home">
+      
     </div>
-    <div class="col-sm-8">
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div id="eagerbelow">
+            Laugh a Little 😁
+        </div>
         <center>
-            <div id="word_container">
+            <div class="word_container">
+                <div class="deck">Joke of the day!</div>
+                <div class="wordperday">
+                    <h2 id="joke_word"></h2>
+                    <div id="jokeexplaination">
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+    <div class="col-sm-6">
+        <div id="eagerbelow">
+            Words of brittle ✍️
+        </div>
+        <center>
+            <div class="word_container">
                 <div>
-                    <div id="deck">Word of the day! 🔄️</div>
-                    <label for="input" class="searchword">Online-Dictionary</label>
+                    <div class="deck">Word of the day!</div><br />
                     <input id="search_word" class="searchword" type="text" value="Welcome" name="search">
                     <img onclick="findout()" id="sb" src="static/bg/search.svg" alt="search-symbol" />
                 </div>
-                <div id="wordperday">
+                <div class="wordperday">
                     <h2 id="title_word" onclick="playphonetics()">HELLO 🔊</h2>
                     <audio id="phonetics" src=""></audio>
                     <div id="explaination">
@@ -34,38 +53,58 @@
 </div>
 
 
-
 <div class="row">
-    <div class="col-md-4">
-        <div class="card">
-            <img src="static/bg/py.svg" alt="python" style="width:200px">
-            <div class="container">
-                <h4><b>Python: Novice to Expert</b></h4>
-                <p>Explore Python skills with our interactive learning platform. <br>Interactive quizzes help you track your understanding Strengthen understanding of Webapps, Automation 
-                tools, Regular expressions, OOPS and many other.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <img src="static/bg/linux.svg" alt="linux" style="width:200px">
-            <div class="container">
-                <h4><b>Linux: Novice to Expert</b></h4>
-                <p>Explore Linux skills with our interactive learning platform. <br>With concise notes and engaging quizzes, Understand Shell Commands, Networking and Open Source Customization</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <img src="static/bg/emb.svg" alt="embedded" style="width:200px">
-            <div class="container">
-                <h4><b>Embedded Systems: Novice to Expert</b></h4>
-                <p>Explore Embedded skills with our C/C++, concise notes and engaging quizzes, <br>Dwell deeper on understanding with RTOS, Kernel and Industrial Applications</p>
-            </div>
-        </div>
+    <div class="col-sm-12" id="eagerbelow">
+        Learn to Settle 💻
     </div>
 </div>
 
+
+<div class="row">
+    <div class="col-md-4">
+        <center>
+            <a class="card" href="{{ url_for('gitcmds') }}">
+                <img src="static/bg/git.svg" alt="git" style="width:200px">
+                <div class="container">
+                    <h4><b>Git Commands: Novice to Expert</b></h4>
+                    <p>
+                        Explore Git commands skills with our interactive learning platform. <br>Interactive quizzes help you track your understanding.
+                    </p>
+                </div>
+            </a>
+        </center>
+    </div>
+    <div class="col-md-4">
+        <center>
+            <a class="card" href="{{ url_for('lnxcmds') }}">
+                <img src="static/bg/linux.svg" alt="linux" style="width:200px">
+                <div class="container">
+                    <h4><b>Linux Shell Scripting</b></h4>
+                    <p>Explore Linux skills with our interactive learning platform. <br>With concise notes and engaging quizzes, Understand Shell Commands, Networking and Open Source Customization</p>
+                </div>
+            </a>
+        </center>
+    </div>
+    <div class="col-md-4">
+        <center>
+            <a class="card" href="{{ url_for('embcmds') }}">
+                <img src="static/bg/emb.svg" alt="embedded" style="width:200px">
+                <div class="container">
+                    <h4><b>Dwell deeper in Embedded Systems</b></h4>
+                    <p>Explore Embedded Systems with Embedded C Scripting, <br>With engaging quizzes, <br>Dwell deeper on understanding with RTOS, Kernel and Industrial Applications</p>
+                </div>
+            </a>
+        </center>
+    </div>
+</div>
+<!--
+    <div class="container">
+                <h4><b>Python: Novice to Expert</b></h4>
+                <p>Explore Python skills with our interactive learning platform. <br>Interactive quizzes help you track your understanding Strengthen understanding of Webapps, Automation
+                tools, Regular expressions, OOPS and many other.</p>
+            </div>
+
+    <iframe src="https://trinket.io/embed/python3/8a85d2da6d?toggleCode=true" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 <div class="row">
     <div class="col-md-12">
 
@@ -73,5 +112,5 @@
 
     </div>
 </div>
-
+-->
     {% endblock %}

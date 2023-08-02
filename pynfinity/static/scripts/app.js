@@ -12,7 +12,7 @@ var long_names = ["🖐 <span>H</span>i, I'm ... !", "🍴 <span>E</span>xperime
 
 function menu_resizing() {
     let width = screen.width;
-    $("#testsize").text(width);
+    $("#topmargin").text(width);
     if (width < 1200 && width > 768) {
         $("#h").html(short_names[0]);
         $("#e").html(short_names[1]);
@@ -33,33 +33,28 @@ function menu_resizing() {
 menu_resizing()
 window.addEventListener("resize", menu_resizing);
 
-function findout2() {
-    let urll = "https://api.dictionaryapi.dev/api/v2/entries/en/" + String($("#search_word").val());
-    let res = apiData(urll)
+async function jokeout() {
 
+    let url = "https://official-joke-api.appspot.com/jokes/programming/random"
+
+    const response = await fetch(url, {
+        method: "GET"
+    });
+
+    if (!response.ok) {
+        $("#title_word").html("Jokes on the way!");
+        $("#explaination").html("Pay your Smile as a Tax Meanwhile 😊");
+        return
+    }
+
+    const data = await response.json();
+    res = data[0];
     console.log(res);
-    if (res[0]) {
-        res = res[1]
-        console.log(res['word']);
-        $("#title_word").html(res['word'] + " 🔊");
-        dyna_option = '<ul>';
 
-        for (let i = 0; i < res[0].meanings.length; i++) {
-            dyna_option += '<li><ul><strong>' + res[0].meanings[i][partOfSpeech] + '</strong>&nbsp;';
-
-            for (let j = 0; j < res[0].meanings[i][partOfSpeech][definitions].length; j++) {
-                dyna_option += "<li>" + res[0].meanings[i][partOfSpeech][definitions][j] + '</li>';
-            }
-            dyna_option += '</ul></li>';
-        }
-
-        dyna_option += '</ul>';
-        $("#explaination").html(dyna_option);
+    if (res.setup) {
+        $("#joke_word").html(res.setup);
+        $("#jokeexplaination").html(res.punchline + ' 😁😂');
     }
-    else {
-        $("#explaination").html('<strong>' + res[1] +' or check our "Word of the day!"</strong>');
-    }
-    
 }
 
 async function findout() {
@@ -111,4 +106,6 @@ function playphonetics() {
     var audio = document.getElementById("phonetics");
     audio.play();
 }
+
 findout();
+jokeout();
