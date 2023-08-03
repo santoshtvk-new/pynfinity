@@ -1,7 +1,7 @@
-{% extends "layout.html" %}
+﻿{% extends "layout.html" %}
 
 {% block content %}
-
+<div id="topmargin"></div>
 <h2>{{ title }}.</h2>
 <h3>{{ message }}</h3>
 
@@ -9,52 +9,74 @@
     <div class="col-md-4">
         <h3>Topics</h3>
         <div class="panel-group" id="chaptersAccordion">
-            <!-- Chapter 1 -->
+
+            {% for key, value in topics_tree.items() %}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#chaptersAccordion" href="#chapter1">Git Intro</a>
+                        <a data-toggle="collapse" data-parent="#chaptersAccordion" href="#chapter{{value[0]}}">{{key}} 🔽 </a>
                     </h4>
                 </div>
-                <div id="chapter1" class="panel-collapse collapse">
+                <div id="chapter{{value[0]}}" class="panel-collapse collapse">
                     <div class="panel-body">
                         <ul>
-                            <li><a href="#chapter1-command1">Git Command 1</a></li>
-                            <li><a href="#chapter1-command2">Git Command 2</a></li>
+
+                            {% for t in value[1] %}
+                            {% for k, v in t.items() %}
+                            <li><a href="#chapter{{value[0]}}-command{{k}}">{{v}}</a></li>
+                            {% endfor %}
+                            {% endfor %}
+
                         </ul>
                     </div>
                 </div>
             </div>
-            <!-- Add more chapters here -->
+            {% endfor %}
         </div>
     </div>
 
     <!-- Right Pane: Content and Questionnaire -->
     <div class="col-md-8">
-        <h3 id="chapter1-command1">Git Command 1</h3>
-        <pre>
-        <code>
-                    git commit -m "sdfasdf"
-                </code>
-            </pre>
-        <p>
-            git commit -m "my commit message"
-        </p>
-        <button class="btn btn-primary" onclick="copyToClipboard('chapter1-command1')">Copy Command</button>
+
+        {% for i in topics_content %}
+
+            <div class="chapter_content">
+                <h3 id="chapter{{i['chapter'][0]}}-command{{i['id']}}">{{i['Topic']}}</h3>
+                <br />
+                <p>{{i['Description']}}</p>
+                <ul class="cmd_params">
+                    {% for o in i["Options"] %}
+                    {% for k in o %}
+                    <li><span>{{k}}</span>{{o[k]}}</li>
+                    {% endfor %}
+                    {% endfor %}
+                </ul>
+                <i>👆 to 📑</i>
+                <pre><code onclick="copyToClipboard(this.id)" id="chapter{{i['chapter'][0]}}-command{{i['id']}}-code">{{i['Syntax']}}</code></pre>
+                <h4 class="code_example">{{i['Example']}}</h4>
+                
+            </div>
+
+
+        {% endfor %}
+
+
 
         <!-- Questionnaire -->
-        <h4>Questionnaire</h4>
-        <div>
-            <p>Question: What does the Git command do?</p>
-            <ul>
-                <li><button class="btn btn-info" onclick="showResult(true)">version control</button></li>
-                <li><button class="btn btn-info" onclick="showResult(false)">deploy</button></li>
-                <!-- Add more options and answers here -->
-            </ul>
-            <p id="questionResult"></p>
+        <div id="Questionnaire">
+            <h4>Questionnaire</h4>
+            <div>
+                <p>Question: What does the Git command do?</p>
+                <ul>
+                    <li><button class="btn btn-info" onclick="showResult(true)">version control</button></li>
+                    <li><button class="btn btn-info" onclick="showResult(false)">deploy</button></li>
+                </ul>
+                <p id="questionResult"></p>
+            </div>
         </div>
 
-        <!-- Add more chapters, commands, and questionnaires here -->
+
+
     </div>
 </div>
 

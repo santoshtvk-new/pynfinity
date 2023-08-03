@@ -12,7 +12,7 @@ var long_names = ["🖐 <span>H</span>i, I'm ... !", "🍴 <span>E</span>xperime
 
 function menu_resizing() {
     let width = screen.width;
-    $("#topmargin").text(width);
+    //$("#topmargin").text(width);
     if (width < 1200 && width > 768) {
         $("#h").html(short_names[0]);
         $("#e").html(short_names[1]);

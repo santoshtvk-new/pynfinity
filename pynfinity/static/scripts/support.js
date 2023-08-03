@@ -44,3 +44,14 @@ function drawskills() {
 function gitclasses() {
     window.open("{{ url_for('gitcmds') }}", "_blank");
 }
+
+function copyToClipboard(elementId) {
+    var commandCode = document.getElementById(elementId).textContent;
+    var tempInput = document.createElement('textarea');
+    tempInput.value = commandCode;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    alert("Copied to Clipboard " + commandCode);
+}

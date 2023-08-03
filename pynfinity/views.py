@@ -80,6 +80,8 @@ def gitcmds():
         'git.html',
         title='Git Commands Tutorial',
         year=datetime.now().year,
+        topics_tree=ut.git_menu_list(),
+        topics_content=ut.git_content(),
         message='Master yourself with Git Basics to Advance'
     )
 

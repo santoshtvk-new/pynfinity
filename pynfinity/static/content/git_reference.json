@@ -1,0 +1,162 @@
+[
+    {
+        "chapter": [1, "Git Introduction"],
+		"id": "a",
+		"Topic": "Version Control",
+        "Syntax": "Software tools in the field of version control systems assist in tracking changes made to files by keeping track of changes made to the source code. ",
+        "Example": "There are different kinds of version control systems: distributed version control systems, centralized version control systems and local Version",
+        "Description": "A single project can have multiple individuals working on it at once.It integrates the work performed concurrently by multiple team members. Access to previous versions of a project is made possible through version control. This serves as protection against data loss or computer breakdowns.",
+        "Options": []
+    },
+    {
+        "chapter": [1, "Git Introduction"],
+		"id": "b",
+		"Topic": "Why Git?",
+        "Syntax": "Git is a distributed version control system that is free and open source and is made to efficiently and quickly handle projects of all sizes.",
+        "Example": "https://git-scm.com/docs/git#_git_commands",
+        "Description": "Git is simple, reliable, light-weight, and performs really quickly. With capabilities like manageable local branching, functional staging areas, and numerous workflows",
+        "Options": []
+    },
+
+    {
+        "chapter": [2, "Common Commands"],
+		"id": "1",
+		"Topic": "Commit Code to Git Repository",
+        "Syntax": "git commit [-a | -m | -c | -F ]",
+        "Example": "git commit -m \"My First Commit\"",
+        "Description": "Record changes to the repository",
+        "Options": [
+            {"-a": "Automatically add all staged files that have been modified."},
+            {"-m": "Use the given commit message as the commit."},
+            {"-c": "Use the given commit object as the commit and modify."},
+            {"-F": "Take the commit message from the given file."}
+        ]
+    },
+    {
+        "chapter": [2, "Common Commands"],
+		"id": "2",
+		"Topic": "Create a New Branch",
+        "Syntax": "git branch [branch_name]",
+        "Example": "git branch feature-branch",
+        "Description": "Create a new branch from the current commit.",
+        "Options": []
+    },
+    {
+        "chapter": [2, "Common Commands"],
+		"id": "3",
+		"Topic": "Switch to a Branch",
+        "Syntax": "git checkout [branch_name]",
+        "Example": "git checkout feature-branch",
+        "Description": "Switch to the specified branch.",
+        "Options": []
+    },
+    {
+        "chapter": [2, "Common Commands"],
+		"id": "4",
+		"Topic": "Add Files to Staging Area",
+        "Syntax": "git add [file1] [file2] ...",
+        "Example": "git add file1.txt",
+        "Description": "Add specified files to the staging area for the next commit.",
+        "Options": []
+    },
+    {
+        "chapter": [2, "Common Commands"],
+		"id": "5",
+		"Topic": "Pull Changes from a Remote Repository",
+        "Syntax": "git pull [remote] [branch]",
+        "Example": "git pull origin main",
+        "Description": "Fetch and merge changes from the remote repository into the current branch.",
+        "Options": []
+    },
+    {
+        "chapter": [2, "Common Commands"],
+		"id": "6",
+		"Topic": "Push Local Commits to a Remote Repository",
+        "Syntax": "git push [remote] [branch]",
+        "Example": "git push origin main",
+        "Description": "Push local commits to the remote repository.",
+        "Options": []
+    },
+    {
+		"chapter": [2, "Common Commands"],
+		"id": "7",
+        "Topic": "View Commit History",
+        "Syntax": "git log",
+        "Example": "git log",
+        "Description": "View the commit history of the current branch.",
+        "Options": []
+    },
+    {
+		"chapter": [3, "Advance Helpful Commands"],
+		"id": "8",
+        "Topic": "Merge Branches",
+        "Syntax": "git merge [branch]",
+        "Example": "git merge feature-branch",
+        "Description": "Merge the specified branch into the current branch.",
+        "Options": []
+    },
+    {
+		"chapter": [3, "Advance Helpful Commands"],
+		"id": "9",
+        "Topic": "Working with Submodules",
+        "Syntax": "git submodule [command]",
+        "Example": "git submodule update",
+        "Description": "Initialize, update, or inspect submodules.",
+        "Options": [
+            {"add": "Add a new submodule to the repository."},
+            {"update": "Update the registered submodules to match what the superproject expects."},
+            {"init": "Initialize the registered submodules."},
+            {"status": "Show the status of the registered submodules."},
+            {"foreach": "Run a command in each submodule."},
+            {"sync": "Synchronize submodule URL configuration with the .gitmodules file."}
+        ]
+    },
+    {
+		"chapter": [3, "Advance Helpful Commands"],
+		"id": "10",
+        "Topic": "Revert Changes",
+        "Syntax": "git revert [commit]",
+        "Example": "git revert abcdef123",
+        "Description": "Create a new commit that undoes the changes made by the provided commit.",
+        "Options": []
+    },
+    {
+		"chapter": [3, "Advance Helpful Commands"],
+		"id": "11",
+        "Topic": "Rebase Branches",
+        "Syntax": "git rebase [branch]",
+        "Example": "git rebase main",
+        "Description": "Move or combine a sequence of commits to a new base.",
+        "Options": []
+    },
+    {
+		"chapter": [2, "Common Commands"],
+		"id": "12",
+        "Topic": "Stash Changes",
+        "Syntax": "git stash [save | list | show | apply | drop | clear]",
+        "Example": "git stash save \"Work in progress\"",
+        "Description": "Stash changes in a dirty working directory away.",
+        "Options": [
+            {"save": "Stash changes in the working directory."},
+            {"list": "List all stashed changesets."},
+            {"show": "Show the changes recorded in the stash as a diff."},
+            {"apply": "Apply the changes recorded in the stash."},
+            {"drop": "Remove a single stashed state from the stash list."},
+            {"clear": "Remove all the stash entries."}
+        ]
+    },
+    {
+		"chapter": [3, "Advance Helpful Commands"],
+		"id": "13",
+        "Topic": "View Diff",
+        "Syntax": "git diff [options] [commit1] [commit2] [path]",
+        "Example": "git diff HEAD~2 HEAD file.txt",
+        "Description": "Show changes between commits, commit and working tree, etc.",
+        "Options": [
+            {"--cached": "Show changes between the index and a given commit."},
+            {"--stat": "Include summary of the changes."},
+            {"--color-words": "Show colored-word diff."},
+            {"-w": "Ignore whitespace when comparing lines."}
+        ]
+    }
+]
