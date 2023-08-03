@@ -1,4 +1,4 @@
-﻿{% extends "git.html" %}
+﻿{% extends "../layout.html" %}
 
 {% block content %}
 <div id="topmargin"></div>
@@ -40,22 +40,22 @@
 
         {% for i in topics_content %}
 
-            <div class="chapter_content">
-                <h3 id="chapter{{i['chapter'][0]}}-command{{i['id']}}">{{i['Topic']}}</h3>
-                <br />
-                <p>{{i['Description']}}</p>
-                <ul class="cmd_params">
-                    {% for o in i["Options"] %}
-                    {% for k in o %}
-                    <li><span>{{k}}</span>{{o[k]}}</li>
-                    {% endfor %}
-                    {% endfor %}
-                </ul>
-                <i>👆 to 📑</i>
-                <pre><code onclick="copyToClipboard(this.id)" id="chapter{{i['chapter'][0]}}-command{{i['id']}}-code">{{i['Syntax']}}</code></pre>
-                <h4 class="code_example">{{i['Example']}}</h4>
-                
-            </div>
+        <div class="chapter_content">
+            <h3 id="chapter{{i['chapter'][0]}}-command{{i['id']}}">{{i['Topic']}}</h3>
+            <br />
+            <p>{{i['Description']}}</p>
+            <ul class="cmd_params">
+                {% for o in i["Options"] %}
+                {% for k in o %}
+                <li><span>{{k}}</span>{{o[k]}}</li>
+                {% endfor %}
+                {% endfor %}
+            </ul>
+            <i>👆 to 📑</i>
+            <pre><code onclick="copyToClipboard(this.id)" id="chapter{{i['chapter'][0]}}-command{{i['id']}}-code">{{i['Syntax']}}</code></pre>
+            <h4 class="code_example">{{i['Example']}}</h4>
+
+        </div>
 
 
         {% endfor %}
