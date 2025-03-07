@@ -1,5 +1,4 @@
 import json
-from flask import url_for
 
 from os.path import dirname, join
 
@@ -66,29 +65,26 @@ def git_menu_list():
 
 def git_content():
     git_complete = json.load(open(join(dirname(__file__), "static/content/git_reference.json")))
-    #for i in git_complete:
-    #    count=1
-    #    li_group = ""
-    #    for o in i["Options"]:
-    #        for k in o:
-    #            li_group += f"<li><span>{k}</span>{o[k]}</li>"
+    for i in git_complete:
+        count = 1
+        li_group = ""
+        for o in i["Options"]:
+            for k in o:
+                li_group += f"<li><span>{k}</span>{o[k]}</li>"
 
-    #    topic_content += f"""
-    #                    <div class="chapter_content">
-    #                            <h3 id="chapter2-command{str(count)}">{i['Topic']}</h3>
-    #                            <br />
-    #                            <p>{i['Description']}</p>
-    #                            <br />
-    #                            <i>click on code snippet to copy</i>
-    #                            <pre onclick="copyToClipboard('chapter2-command{str(count)}-code')"><code id="chapter2-command{str(count)}-code">{i['Syntax']}</code></pre>
-    #                            <h4 class="code_example">{i['Example']}</h4>
-    #                            <ul class="cmd_params">
-    #                                {li_group}
-    #                            </ul>
-    #                        </div>
-    #                    """
-    #    count += 1
+        topic_content += f"""
+                        <div class="chapter_content">
+                                <h3 id="chapter2-command{str(count)}">{i['Topic']}</h3>
+                                <br />
+                                <p>{i['Description']}</p>
+                                <br />
+                                <i>click on code snippet to copy</i>
+                                <pre onclick="copyToClipboard('chapter2-command{str(count)}-code')"><code id="chapter2-command{str(count)}-code">{i['Syntax']}</code></pre>
+                                <h4 class="code_example">{i['Example']}</h4>
+                                <ul class="cmd_params">
+                                    {li_group}
+                                </ul>
+                            </div>
+                        """
+        count += 1
     return git_complete
-
-
-print(git_menu_list())

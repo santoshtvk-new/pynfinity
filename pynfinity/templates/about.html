@@ -2,35 +2,41 @@
 
 {% block content %}
 <div id="topmargin"></div>
+
 <div class="row">
-    <div class="col-md-7" style="border-right:2px solid #000000">
+    <div class="col-lg-12">
         <div id="cursorText">🙏 Hello</div>
         <ul id="intro">
             <li>I'm <span>Venkata Santosh</span><br></li>
             <li>
-                Python Automation Engineer with expertise in Embedded and Machine Learning over <span>7+ Years</span> in Medical, Defence and IoT Domains.
+                <div>
+                    <center>
+                        <img alt="me" id="profileimg" src="static/bg/me.png" />
+                        <span>Automation Specialist and Software Engineer [Total Experience: <span id="tot_exp"></span>]</span>
+                    </center>
+                </div>
             </li>
             <li>
-                I have Automated over 10+ projects using Python, Robot Framework, Linux, Android and Databases such as Azure
-                Cosmos and SQL DB.
-                Additionally, gained significant experience in <span>CI-CD related projects</span> and proven ability to lead a
-                team.
-                Developed RTOS-based embedded C++ applications, and also gained solid knowledge in <span>Problem Solving</span>, and
-                Data Structures & Algorithms.
+                Experienced in leveraging Python for automation, embedded systems, and machine learning across Finance, Medical, Defense,
+and IoT sectors. Successfully automated 15+ projects using <span>Python</span>, Robot Framework, Linux, and databases (Azure Cosmos,
+SQL DB, Oracle DB, and Databricks). Proficient in CI-CD pipelines and team leadership. Strong background in problem-solving,
+data structures, and algorithms, with a deep understanding of <span>data analysis techniques</span> and Python development for robust
+application solutions.
             </li>
         </ul>
     </div>
-    <div class="col-md-5">
-        <div>
-            <center>
-                <img alt="me" id="profileimg" src="static/bg/me.png" />
-                <div class="googlechart" id="expchart"></div>
-                <br />
-                <div class="googlechart" id="skchart"></div>
-            </center>
-        </div>
-    </div>
+</div>
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="googlechart" id="expchart"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="googlechart" id="skchart"></div>
+    </div>
 </div>
 
 <div class="row lastrow">

@@ -2,30 +2,33 @@
 Routes and views for the flask application.
 """
 from datetime import datetime
-from flask import render_template, request, jsonify
+
+from flask import render_template, request
+
 try:
     import pynfinity.utility as ut
 except ModuleNotFoundError:
     import utility as ut
 
 from flask import Flask
+
 app = Flask(__name__)
 
 
-@app.route('/', methods =["GET", "POST"])
-@app.route('/home', methods =["GET", "POST"])
+@app.route('/', methods=["GET", "POST"])
+@app.route('/home', methods=["GET", "POST"])
 def home():
     """Renders the home page."""
 
-    data = "Creator!" # ut.store_user_details()
-    page_load_params = {"wod":"", "msg":""}
-  
+    data = "Creator!"  # ut.store_user_details()
+    page_load_params = {"wod": "", "msg": ""}
+
     if request.method == 'GET':
         page_load_params['msg'] = "Welcome " + str(datetime.now())
-    
+
     if request.method == 'POST':
         page_responses = request.get_json()
-    
+
     return render_template(
         'index.html',
         title='Home Page',
@@ -34,15 +37,16 @@ def home():
         creator=data
     )
 
+
 @app.route('/contact')
 def contact():
     """Renders the contact page."""
     return render_template(
         'contact.html',
-        title='Meet me @ ...',
+        title="☎ Video Call for you",
         year=datetime.now().year,
-        message='Let\'s have a cup of Coffee together!'
     )
+
 
 @app.route('/problems')
 def problems():
@@ -54,6 +58,7 @@ def problems():
         message='Let\'s Brain-Storm !!'
     )
 
+
 @app.route('/experiment')
 def experiment():
     """Renders the experiment page."""
@@ -63,6 +68,7 @@ def experiment():
         year=datetime.now().year,
         message='Let\'s Brain-Storm !!'
     )
+
 
 @app.route('/about')
 def about():
@@ -74,7 +80,8 @@ def about():
         message='Few points about me...'
     )
 
-@app.route('/learn/git')
+
+@app.route('/git')
 def gitcmds():
     return render_template(
         'git.html',
@@ -85,6 +92,7 @@ def gitcmds():
         message='Master yourself with Git Basics to Advance'
     )
 
+
 @app.route('/learn/linux')
 def lnxcmds():
     return render_template(
@@ -93,6 +101,7 @@ def lnxcmds():
         year=datetime.now().year,
         message='Master yourself with Linux Shell Commands'
     )
+
 
 @app.route('/learn/embedded_systems')
 def embcmds():

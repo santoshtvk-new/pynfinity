@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='content/bootstrap.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='content/site.css')}}" />
     <script src="{{url_for('static', filename='scripts/modernizr-2.6.2.js')}}"></script>
-    <script src='https://8x8.vc/vpaas-magic-cookie-274108d3aae44a759945a1a602cc50ee/external_api.js' async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Edu+VIC+WA+NT+Beginner:wght@500&family=Handlee&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
@@ -23,44 +22,36 @@
 
 </head>
 
-<body style="padding-top: 50px; padding-bottom: 20px; background: cornsilk; ">
-    <div class="navbar navbar-inverse navbar-fixed-top barstyle">
-
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <center>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        Menu
-                    </center>
-                </button>
-                <a href="/" class="navbar-brand sticky-title"><img alt="logosvg" src="{{url_for('static', filename='bg/l.svg')}}"/><span id="logoname">Pynfinity</span></a>
-            </div>
-            <div class="navbar-collapse collapse" id="menu_area">
-                <center>
-                    <ul class="nav navbar-nav sticky-menu">
-
-                        <li><a id="h" href="{{ url_for('about') }}">🖐 <span>H</span>i, I'm ... !</a></li>
-                        <!--<li><a id="e" class="disabled_a" href="{{ url_for('experiment') }}">🍴 <span>E</span>xperiments </a></li>-->
-                        <li><a id="l" href="{{ url_for('home') }}">💻 <span>E</span>xpress & Impress!!</a></li>
-                        <!--<li><a id="ll" class="disabled_a" href="{{ url_for('problems') }}">🚀 <span>L</span>ot's of Challenges</a></li>-->
-                        <li><a id="o" href="{{ url_for('contact') }}">🤝 <span>Y</span> to wait? Let's connect !</a></li>
-                    </ul>
-                </center>
-                
-            </div>
-        </div>
-    </div>
-
-
+<body style="padding-top: 50px; padding-bottom: 20px; background: #532E00; ">
     <div class="container body-content">
-        {% block content %}{% endblock %}
-        <hr />
-        <footer>
-            <p>&copy; santoshtvk - {{ year }}</p>
-        </footer>
+
+        <div class="row">
+            <div class="col-xs-2" id="sidemenucol">
+
+                <div class="sidemenu">
+                    <a href="/" class="sticky-title"><img alt="logosvg" src="{{url_for('static', filename='bg/l.svg')}}" /><span id="logoname">Pynfinity</span></a>
+
+                    <ul class="sidemenuitems">
+
+                        <li><a id="aboutmenu" href="{{ url_for('about') }}"><img alt="AboutMe" src="{{url_for('static', filename='bg/about.png')}}"/></li>
+                        <li><a id="Experimentmenu" href="{{ url_for('experiment') }}"><img alt="Experiments" src="{{url_for('static', filename='bg/project.svg')}}" /></a></li>
+                        <li><a id="learnmenu" href="{{ url_for('home') }}"><img alt="LearnTogether" src="{{url_for('static', filename='bg/home.svg')}}" /></a></li>
+                        <li><a id="challengemenu" href="{{ url_for('problems') }}"><img alt="Challenges" src="{{url_for('static', filename='bg/challenge.svg')}}" /></a></li>
+                        <li><a id="contactmenu" href="{{ url_for('contact') }}"><img alt="ContactMe" src="{{url_for('static', filename='bg/contact.svg')}}" /></li>
+                    </ul>
+                </div>
+
+                <hr />
+                <footer>
+                    <p>&copy; santoshtvk - {{ year }}</p>
+                </footer>
+            </div>
+
+
+
+            {% block content %}{% endblock %}
+
+        </div>
     </div>
 
     <script src="{{url_for('static', filename='scripts/jquery-1.10.2.js')}}"></script>

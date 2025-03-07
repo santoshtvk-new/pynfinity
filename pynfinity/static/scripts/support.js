@@ -3,23 +3,53 @@ let wordlist = ["abate", "aberrant", "abjure", "abscond", "abstain", "acumen", "
 const randomElement = wordlist[Math.floor(Math.random() * wordlist.length)];
 $("#search_word").val(randomElement);
 
-google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.load('current', { 'packages': ['corechart', 'timeline'] });
 google.charts.setOnLoadCallback(drawexps);
 google.charts.setOnLoadCallback(drawskills);
 
-function drawexps() {
-    var data = new google.visualization.arrayToDataTable([
-        ['Organization', 'Year\'s of Experience'],
-        ['HGS', 0.8],
-        ['Galada Power', 1],
-        ['Defence RCI', 3],
-        ['Qualcomm', 2],
-        ['Signant Health', 2.3]
-    ]);
+function date_diff_in_years(a, b){
+    const date1 = new Date(a);
+    const date2 = new Date(b);
+    const diffTime = Math.abs(date2.getTime() - date1.getTime());
+    const diffY = (diffTime / (1000 * 60 * 60 * 24 * 365)).toFixed(2);
+    console.log(diffY + " ----------------------years");
+    return parseFloat(diffY);
+}
 
-    var options = { 'title': 'Experiences'};
-    var chart = new google.visualization.PieChart(document.getElementById('expchart'));
-    chart.draw(data, options);
+function cur_date(){
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    const yyyy = today.getFullYear();
+
+    const formattedDate = mm + '/' + dd + '/' + yyyy;
+    console.log(formattedDate); // Output: mm/dd/yyyy
+    d = new Date(formattedDate)
+    return d;
+}
+
+function drawexps() {
+
+    var container = document.getElementById('expchart');
+    var chart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Position' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows([
+        [ 'Executive Engineer', 'Misc', new Date(2014, 07, 1),  new Date(2015, 10, 9) ],
+      [ 'Executive Engineer', 'Galada Power Pvt Ltd',new Date(2015, 10, 9),  new Date(2016, 7, 20) ],
+      [ 'Software Engineer', 'Defence DRDL-RCI',    new Date(2016, 7, 25),  new Date(2019, 6, 1) ],
+      [ 'Software Engineer', 'VotaryTech [Client-Qualcomm]', new Date(2019, 6, 4),   new Date(2021, 4, 22) ],
+      [ 'Automation Engineer', 'Signant Health',      new Date(2021, 4, 26),  new Date(2023, 12, 1) ],
+      [ 'Automation Engineer', 'S&P Global',          new Date(2024, 1, 5),   new Date() ]]);
+
+      var options = {
+            timeline: { groupByRowLabel: true }
+        };
+
+    chart.draw(dataTable, options);
 }
 
 function drawskills() {
@@ -36,8 +66,11 @@ function drawskills() {
         ['Machine Learning', 6]
     ]);
 
-    var options = { 'title': 'Skills', pieHole: 0.4 };
-    var chart = new google.visualization.PieChart(document.getElementById('skchart'));
+    var options = { 'title': 'Skills',
+                    vAxis: {title: 'Rated-Myself (0-10)'},
+                    };
+                    //isStacked: true
+    var chart = new google.visualization.AreaChart(document.getElementById('skchart'));
     chart.draw(data, options);
 }
 
@@ -55,3 +88,35 @@ function copyToClipboard(elementId) {
     document.body.removeChild(tempInput);
     alert("Copied to Clipboard " + commandCode);
 }
+
+function diff_years(dt2, dt1)
+{
+  var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+  diff /= (60 * 60 * 24);
+  console.log(diff);
+  return Math.abs(diff / 365.25).toFixed(2);
+}
+
+d1 = new Date(2014, 07, 1)
+d2 = new Date()
+$("#tot_exp").html(diff_years(d2, d1))
+
+window.onload = () => {
+            const api = new JitsiMeetExternalAPI("8x8.vc", {
+              roomName: "vpaas-magic-cookie-274108d3aae44a759945a1a602cc50ee/SampleAppExperiencedCounsellorsKeyGenuinely",
+              parentNode: document.querySelector('#jaas-container'),
+							// Make sure to include a JWT if you intend to record,
+							// make outbound calls or use any other premium features!
+							// jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtMjc0MTA4ZDNhYWU0NGE3NTk5NDVhMWE2MDJjYzUwZWUvZjNjNTllLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE3MjcxNzI5NTQsImV4cCI6MTcyNzE4MDE1NCwibmJmIjoxNzI3MTcyOTQ5LCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMjc0MTA4ZDNhYWU0NGE3NTk5NDVhMWE2MDJjYzUwZWUiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwic2lwLW91dGJvdW5kLWNhbGwiOmZhbHNlLCJ0cmFuc2NyaXB0aW9uIjpmYWxzZSwicmVjb3JkaW5nIjpmYWxzZX0sInVzZXIiOnsiaGlkZGVuLWZyb20tcmVjb3JkZXIiOmZhbHNlLCJtb2RlcmF0b3IiOnRydWUsIm5hbWUiOiJUZXN0IFVzZXIiLCJpZCI6Imdvb2dsZS1vYXV0aDJ8MTExNDM4OTI5NDc4ODUwMjE2MTc1IiwiYXZhdGFyIjoiIiwiZW1haWwiOiJ0ZXN0LnVzZXJAY29tcGFueS5jb20ifX0sInJvb20iOiIqIn0.sNSS48jMXwW0vkZJ4BbL1nXesdB2rExkBr3S-XyWhfWqD0_Xqla7VRbL9qvz7RY9XpGFPCEa0UnKUA7BjI938YmV9qQilLKxw69I1Yk1KBIhGeJBf9WAE6vrRtdSG99JR8kHAUmh0sujEFIDB5_NW54TaQAAntbSjR_es_3iXb74dNxtlQIz8Az9He_hfcs_6vl9vu9j82OHJfMXJgBPcaalZ5W6gSFoW4eXoYIL_AOBiz14FEsXqc-8-b9PdteVdMwp29NeoriSzf1Eyl-6R6NOvWGemIAmaJkTpxolgySGQ0NLWnlKKp7Rrcq9eioy1Mn6fIXaErt8kjno-YXc0w"
+            });
+          }
+
+$("#jaas-container").css('pointer-events','none');
+
+$(document).ready(function() {
+    var storedInput = localStorage.getItem('author');
+    if (storedInput=='santoshtvk') {
+        $("#jaas-container").css('pointer-events','');
+    }
+});
+
