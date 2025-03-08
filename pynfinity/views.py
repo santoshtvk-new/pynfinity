@@ -34,7 +34,7 @@ def home():
     if request.method == 'POST':
         page_responses = request.get_json()
 
-    ut.store_user_details()
+    # ut.store_user_details()
 
     return render_template(
         'index.html',
