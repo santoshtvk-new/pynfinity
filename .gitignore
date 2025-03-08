@@ -14,3 +14,5 @@
 *.pyproj
 .idea
 pynfinity/__pycache__
+ex.html
+exx.py

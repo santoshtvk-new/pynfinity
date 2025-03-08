@@ -1,0 +1,674 @@
+python:
+  basics:
+    topic-1:
+      title: |
+        Perform Arithmetic Operation with 2 Numbers and show result on the screen
+      code: |
+        print("Addition of 58 and 26:", 58+26)
+        print("Subtract 26 from 58:", 58-26)
+        print("Multiply 58 and 36:", 58*26)
+        print("Divide 58 with 16:", 58/16)
+        print("Divide 58 with 16 and show integer value:", 58//16)
+        print("Divide 58 with 16 and show reminder value:", 58%16)
+        print("5 to the power of 3:", 5**3)
+
+    topic-2:
+      title: |
+        Define a code block with print statement and call it
+      code: |
+        def welcome(name):
+          print(f"Hello, {name} Welcome to Pynfinity!")
+      
+        welcome("World")
+
+    topic-3:
+      title: |
+        Variables and Data Types in Python
+      code: |
+        # Integer
+        age = 25
+        print("Age:", age)
+        
+        # String
+        name = "John"
+        print("Name:", name)
+        
+        # Float
+        height = 5.9
+        print("Height:", height)
+        
+        # Boolean
+        is_student = True
+        print("Is Student:", is_student)
+
+    topic-4:
+      title: |
+        Working with Lists
+      code: |
+        fruits = ["apple", "banana", "cherry"]
+        print("List of fruits:", fruits)
+        
+        # Accessing elements
+        print("First fruit:", fruits[0])
+        
+        # Adding items
+        fruits.append("orange")
+        print("Updated list:", fruits)
+        
+        # Removing items
+        fruits.remove("banana")
+        print("List after removing 'banana':", fruits)
+
+    topic-5:
+      title: |
+        Conditionals and if-else statements
+      code: |
+        x = 10
+        if x > 5:
+          print("x is greater than 5")
+        elif x == 5:
+          print("x is equal to 5")
+        else:
+          print("x is less than 5")
+
+    topic-6:
+      title: |
+        For Loop Example
+      code: |
+        # Loop through a list
+        for fruit in fruits:
+          print(fruit)
+
+    topic-7:
+      title: |
+        While Loop Example
+      code: |
+        count = 0
+        while count < 5:
+          print("Count is:", count)
+          count += 1
+
+    topic-8:
+      title: |
+        Functions and Return Values
+      code: |
+        def add_numbers(a, b):
+          return a + b
+        
+        result = add_numbers(10, 20)
+        print("Result of addition:", result)
+
+  intermediate:
+    topic-1:
+      title: |
+        Dictionaries in Python
+      code: |
+        person = {
+          "name": "Alice",
+          "age": 30,
+          "city": "New York"
+        }
+        print("Person Dictionary:", person)
+        
+        # Accessing a value
+        print("Person's name:", person["name"])
+        
+        # Adding a new key-value pair
+        person["job"] = "Engineer"
+        print("Updated Person Dictionary:", person)
+
+    topic-2:
+      title: |
+        String Manipulation
+      code: |
+        text = "Hello, Python!"
+        
+        # String length
+        print("Length of string:", len(text))
+        
+        # Convert to uppercase
+        print("Uppercase:", text.upper())
+        
+        # Replace a substring
+        new_text = text.replace("Python", "World")
+        print("Replaced text:", new_text)
+
+    topic-3:
+      title: |
+        List Comprehensions
+      code: |
+        numbers = [1, 2, 3, 4, 5]
+        
+        # Using list comprehension to square each number
+        squares = [num**2 for num in numbers]
+        print("Squared numbers:", squares)
+
+    topic-4:
+      title: |
+        Error Handling with Try-Except
+      code: |
+        try:
+          x = 10 / 0
+        except ZeroDivisionError:
+          print("Cannot divide by zero!")
+        else:
+          print("Division successful!")
+
+    topic-5:
+      title: |
+        Lambda Functions
+      code: |
+        # A simple lambda function to add two numbers
+        add = lambda a, b: a + b
+        result = add(5, 7)
+        print("Result of addition:", result)
+
+    topic-6:
+      title: |
+        Working with Files
+      code: |
+        # Writing to a file
+        with open("sample.txt", "w") as file:
+          file.write("Hello, this is a Python file.")
+        
+        # Reading from a file
+        with open("sample.txt", "r") as file:
+          content = file.read()
+          print("File content:", content)
+
+  advanced:
+    topic-1:
+      title: |
+        Object-Oriented Programming (OOP)
+      code: |
+        class Person:
+          def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+          def greet(self):
+            print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+        
+        # Creating an object of the Person class
+        person1 = Person("John", 25)
+        person1.greet()
+
+    topic-2:
+      title: |
+        Generators in Python
+      code: |
+        # A simple generator function to yield numbers
+        def count_up_to(max):
+          count = 1
+          while count <= max:
+            yield count
+            count += 1
+        
+        # Using the generator
+        counter = count_up_to(5)
+        for num in counter:
+          print(num)
+
+    topic-3:
+      title: |
+        Decorators in Python
+      code: |
+        def decorator(func):
+          def wrapper():
+            print("Before function call")
+            func()
+            print("After function call")
+          return wrapper
+        
+        @decorator
+        def say_hello():
+          print("Hello!")
+        
+        say_hello()
+
+    topic-4:
+      title: |
+        Handling JSON Data
+      code: |
+        import json
+        
+        # Convert Python dictionary to JSON
+        person = {"name": "Alice", "age": 30}
+        person_json = json.dumps(person)
+        print("JSON representation:", person_json)
+        
+        # Convert JSON back to Python dictionary
+        person_dict = json.loads(person_json)
+        print("Python dictionary:", person_dict)
+
+sql:
+  basics:
+    topic-1:
+      title: |
+        Create a Table and Insert Data
+      code: |
+        CREATE TABLE employees (
+          id INT PRIMARY KEY,
+          name VARCHAR(50),
+          age INT,
+          department VARCHAR(50)
+        );
+        
+        INSERT INTO employees (id, name, age, department)
+        VALUES (1, 'John Doe', 30, 'Engineering'),
+               (2, 'Jane Smith', 25, 'Marketing'),
+               (3, 'Mike Johnson', 35, 'HR');
+        
+        SELECT * FROM employees;
+
+    topic-2:
+      title: |
+        Basic SELECT Statement
+      code: |
+        SELECT name, age FROM employees;
+
+    topic-3:
+      title: |
+        Filtering Data with WHERE Clause
+      code: |
+        SELECT name, department FROM employees
+        WHERE age > 30;
+
+    topic-4:
+      title: |
+        Sorting Results with ORDER BY
+      code: |
+        SELECT name, age FROM employees
+        ORDER BY age DESC;
+
+    topic-5:
+      title: |
+        Updating Data with UPDATE Statement
+      code: |
+        UPDATE employees
+        SET age = 32
+        WHERE name = 'John Doe';
+        
+        SELECT * FROM employees;
+
+    topic-6:
+      title: |
+        Deleting Data with DELETE Statement
+      code: |
+        DELETE FROM employees
+        WHERE name = 'Mike Johnson';
+        
+        SELECT * FROM employees;
+
+  intermediate:
+    topic-1:
+      title: |
+        JOIN Operations (INNER JOIN)
+      code: |
+        CREATE TABLE departments (
+          department_id INT PRIMARY KEY,
+          department_name VARCHAR(50)
+        );
+        
+        INSERT INTO departments (department_id, department_name)
+        VALUES (1, 'Engineering'),
+               (2, 'Marketing'),
+               (3, 'HR');
+        
+        SELECT employees.name, departments.department_name
+        FROM employees
+        INNER JOIN departments
+        ON employees.department = departments.department_name;
+
+    topic-2:
+      title: |
+        Aggregate Functions (COUNT, AVG, MAX, MIN, SUM)
+      code: |
+        SELECT department, COUNT(*) AS num_employees
+        FROM employees
+        GROUP BY department;
+        
+        SELECT AVG(age) AS average_age FROM employees;
+        
+        SELECT MAX(age) AS oldest_employee_age FROM employees;
+        
+        SELECT MIN(age) AS youngest_employee_age FROM employees;
+        
+        SELECT SUM(age) AS total_age FROM employees;
+
+    topic-3:
+      title: |
+        Using GROUP BY with HAVING
+      code: |
+        SELECT department, COUNT(*) AS num_employees
+        FROM employees
+        GROUP BY department
+        HAVING COUNT(*) > 1;
+
+    topic-4:
+      title: |
+        Using LIKE Operator for Pattern Matching
+      code: |
+        SELECT name FROM employees
+        WHERE name LIKE 'J%';
+
+    topic-5:
+      title: |
+        Working with NULL Values
+      code: |
+        SELECT name, age FROM employees
+        WHERE age IS NULL;
+
+    topic-6:
+      title: |
+        Subqueries (Nested Queries)
+      code: |
+        SELECT name, age
+        FROM employees
+        WHERE age > (SELECT AVG(age) FROM employees);
+
+  advanced:
+    topic-1:
+      title: |
+        UNION and UNION ALL
+      code: |
+        SELECT name, age FROM employees WHERE department = 'Engineering'
+        UNION
+        SELECT name, age FROM employees WHERE department = 'Marketing';
+        
+        SELECT name, age FROM employees WHERE department = 'Engineering'
+        UNION ALL
+        SELECT name, age FROM employees WHERE department = 'Marketing';
+
+    topic-2:
+      title: |
+        Creating and Using Views
+      code: |
+        CREATE VIEW employee_summary AS
+        SELECT name, department, age
+        FROM employees;
+        
+        SELECT * FROM employee_summary;
+
+    topic-3:
+      title: |
+        Creating Indexes to Improve Query Performance
+      code: |
+        CREATE INDEX idx_department ON employees(department);
+        
+        SELECT * FROM employees WHERE department = 'Engineering';
+
+    topic-4:
+      title: |
+        Using Transactions (BEGIN, COMMIT, ROLLBACK)
+      code: |
+        BEGIN;
+        
+        UPDATE employees SET age = 40 WHERE name = 'Jane Smith';
+        
+        COMMIT;
+        
+        -- ROLLBACK example:
+        -- BEGIN;
+        -- DELETE FROM employees WHERE name = 'John Doe';
+        -- ROLLBACK;
+
+    topic-5:
+      title: |
+        Advanced JOINs (LEFT JOIN, RIGHT JOIN, FULL JOIN)
+      code: |
+        -- Left Join
+        SELECT employees.name, departments.department_name
+        FROM employees
+        LEFT JOIN departments
+        ON employees.department = departments.department_name;
+        
+        -- Right Join
+        SELECT employees.name, departments.department_name
+        FROM employees
+        RIGHT JOIN departments
+        ON employees.department = departments.department_name;
+        
+        -- Full Join (if supported by your DBMS)
+        SELECT employees.name, departments.department_name
+        FROM employees
+        FULL JOIN departments
+        ON employees.department = departments.department_name;
+
+    topic-6:
+      title: |
+        Using CASE Statements for Conditional Logic
+      code: |
+        SELECT name, age,
+               CASE
+                 WHEN age >= 30 THEN 'Senior'
+                 WHEN age < 30 THEN 'Junior'
+                 ELSE 'Unknown'
+               END AS experience_level
+        FROM employees;
+
+    topic-7:
+      title: |
+        Using Stored Procedures
+      code: |
+        DELIMITER //
+        
+        CREATE PROCEDURE get_employee_by_department(dept VARCHAR(50))
+        BEGIN
+          SELECT name, age
+          FROM employees
+          WHERE department = dept;
+        END //
+        
+        DELIMITER ;
+        
+        -- Call the stored procedure:
+        CALL get_employee_by_department('Engineering');
+
+
+git:
+  basics:
+    topic-1:
+      title: |
+        Initialize a New Git Repository
+      code: |
+        # Initialize a new repository
+        git init
+        
+        # Check the status of the repository
+        git status
+
+    topic-2:
+      title: |
+        Checking the Status of Your Files
+      code: |
+        # Check the status of the repository
+        git status
+        
+        # Show changes in the working directory
+        git diff
+
+    topic-3:
+      title: |
+        Adding Files to the Staging Area
+      code: |
+        # Add a single file to the staging area
+        git add filename.txt
+        
+        # Add all files to the staging area
+        git add .
+
+    topic-4:
+      title: |
+        Committing Changes
+      code: |
+        # Commit staged changes
+        git commit -m "Initial commit"
+        
+        # View commit history
+        git log
+
+    topic-5:
+      title: |
+        Cloning a Repository
+      code: |
+        # Clone an existing repository
+        git clone https://github.com/username/repository.git
+
+    topic-6:
+      title: |
+        Checking the Commit History
+      code: |
+        # View the commit history in the repository
+        git log
+        
+        # View the commit history with a specific format
+        git log --oneline
+
+  intermediate:
+    topic-1:
+      title: |
+        Creating and Switching Branches
+      code: |
+        # Create a new branch
+        git branch new-branch
+        
+        # Switch to the new branch
+        git checkout new-branch
+        
+        # Alternatively, create and switch in one command
+        git checkout -b new-branch
+
+    topic-2:
+      title: |
+        Merging Branches
+      code: |
+        # Switch to the branch you want to merge into
+        git checkout main
+        
+        # Merge another branch into the current branch
+        git merge new-branch
+        
+        # Resolve conflicts, if any
+
+    topic-3:
+      title: |
+        Deleting Branches
+      code: |
+        # Delete a local branch
+        git branch -d new-branch
+        
+        # Delete a remote branch
+        git push origin --delete new-branch
+
+    topic-4:
+      title: |
+        Stashing Changes
+      code: |
+        # Stash changes that are not yet committed
+        git stash
+        
+        # List all stashes
+        git stash list
+        
+        # Apply the latest stash
+        git stash apply
+
+    topic-5:
+      title: |
+        Working with Remote Repositories
+      code: |
+        # Add a remote repository
+        git remote add origin https://github.com/username/repository.git
+        
+        # Push changes to the remote repository
+        git push origin main
+        
+        # Pull changes from the remote repository
+        git pull origin main
+        
+        # Check remote repository URLs
+        git remote -v
+
+    topic-6:
+      title: |
+        Undoing Changes
+      code: |
+        # Undo changes in the working directory (before commit)
+        git checkout -- filename.txt
+        
+        # Undo the last commit (keep the changes staged)
+        git reset --soft HEAD~1
+        
+        # Undo the last commit (remove changes)
+        git reset --hard HEAD~1
+
+  advanced:
+    topic-1:
+      title: |
+        Rebasing Branches
+      code: |
+        # Rebase a branch onto another branch
+        git checkout feature-branch
+        git rebase main
+        
+        # Resolve conflicts if they occur during the rebase
+
+    topic-2:
+      title: |
+        Cherry-picking Commits
+      code: |
+        # Apply a specific commit from another branch
+        git cherry-pick <commit-hash>
+        
+        # After cherry-pick, commit if necessary
+
+    topic-3:
+      title: |
+        Tagging Releases
+      code: |
+        # Create a new tag
+        git tag v1.0
+        
+        # Push tags to the remote repository
+        git push origin v1.0
+        
+        # List all tags
+        git tag
+        
+        # Checkout a specific tag
+        git checkout v1.0
+
+    topic-4:
+      title: |
+        Resetting and Reverting Commits
+      code: |
+        # Reset to a specific commit (and delete changes)
+        git reset --hard <commit-hash>
+        
+        # Revert a commit (create a new commit that undoes the changes)
+        git revert <commit-hash>
+
+    topic-5:
+      title: |
+        Resolving Merge Conflicts
+      code: |
+        # After a merge conflict, Git will mark the conflicting files
+        git status
+        
+        # Open the conflicting file and manually resolve conflicts
+        # After resolving, stage the file and commit the merge
+        git add filename.txt
+        git commit
+
+    topic-6:
+      title: |
+        Squashing Commits
+      code: |
+        # Combine multiple commits into one (during rebase)
+        git rebase -i HEAD~3
+        
+        # Mark the commits you want to squash
+        # Change 'pick' to 'squash' for the commits to combine
+        
+        # After finishing, you'll have one commit containing all the changes

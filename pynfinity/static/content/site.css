@@ -475,6 +475,17 @@ list-style-type: none;
     float:right;
 }
 
+.code_explanation{
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.5rem;
+    background: var(--blackish);
+    color: var(--choco);
+    text-align: center;
+    font-weight: bold;
+    padding: 2%;
+    border-radius: 5px;
+}
+
 .chapter_content pre code {
     font-family: Ubuntu, monospace;
     font-size: 1.5rem;

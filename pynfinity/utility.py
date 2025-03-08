@@ -1,55 +1,51 @@
+import datetime
 import json
 
 from os.path import dirname, join
+from flask import request
 
 try:
-    import requests
     import sqlite3
     from sqlite3 import Error
     from getmac import get_mac_address as gma
 except Exception:
     pass
 
-user_system = ""
-
 
 def create_connection(db_file):
     conn = None
-    msg = ""
     try:
         conn = sqlite3.connect(db_file)
-        msg += sqlite3.version
     except Error as e:
-        msg += e
-    return msg, conn
+        print(e)
+    return conn
 
 
-def create_table(conn, create_table_sql):
+def trigger_query_db(conn, create_table_sql):
     try:
         c = conn.cursor()
         c.execute(create_table_sql)
+        print(c.fetchall())
     except Error as e:
         print(e)
 
 
 def store_user_details():
-    global user_system
+    qtable = """CREATE TABLE IF NOT EXISTS UserData(
+        macid text PRIMARY KEY,
+        useragent text NOT NULL,
+        timestamp text NOT NULL
+        );"""
 
-    qtable = """CREATE TABLE IF NOT EXISTS tasks (
-	macid integer PRIMARY KEY,
-	useragent text NOT NULL,
-    username text,
-	language text,
-	topic_id integer NOT NULL,
-	status_id integer NOT NULL,
-	begin_date text NOT NULL,
-	end_date text NOT NULL
-    );"""
-
-    user_system = request.headers.get("User-Agent")
-    msg, conn = create_connection(r"userdata.db")
-    msg += gma()
-    return msg
+    conn = create_connection(r"userdata.db")
+    if conn:
+        trigger_query_db(conn, qtable)
+        insert_table = f"""
+            INSERT INTO UserData (macid, useragent, timestamp)
+            VALUES ('{gma()}', '{str(request.remote_addr) + ' ' + str(request.user_agent) + ' ' + str(request.remote_user)}', '{str(datetime.datetime.now())}');
+            """
+        trigger_query_db(conn, insert_table)
+        trigger_query_db(conn, "select * from UserData")
 
 
 def git_menu_list():
@@ -58,12 +54,13 @@ def git_menu_list():
     for i in git_complete:
         if i['chapter'][1] not in topics.keys():
             topics[i['chapter'][1]] = [i['chapter'][0], []]
-        
-        topics[i['chapter'][1]][1].append({i["id"]:i["Topic"]})
+
+        topics[i['chapter'][1]][1].append({i["id"]: i["Topic"]})
     return topics
 
 
 def git_content():
+    topic_content = ""
     git_complete = json.load(open(join(dirname(__file__), "static/content/git_reference.json")))
     for i in git_complete:
         count = 1

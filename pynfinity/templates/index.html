@@ -9,7 +9,7 @@
 
 <div class="row">
     <div class="col-sm-12" id="animate_home">
-      
+
     </div>
 </div>
 
@@ -36,9 +36,10 @@
         <center>
             <div class="word_container">
                 <div>
-                    <div class="deck">Word of the day!</div><br />
+                    <div class="deck">Word of the day!</div>
+                    <br/>
                     <input id="search_word" class="searchword" type="text" value="Welcome" name="search">
-                    <img onclick="findout()" id="sb" src="static/bg/search.svg" alt="search-symbol" />
+                    <img onclick="findout()" id="sb" src="static/bg/search.svg" alt="search-symbol"/>
                 </div>
                 <div class="wordperday">
                     <h2 id="title_word" onclick="playphonetics()">HELLO 🔊</h2>
@@ -51,65 +52,129 @@
     </div>
 </div>
 
-
 <div class="row">
-    <div class="col-sm-12 eagerbelow">
-        Python Code Snippets from my personal repository: <a href="https://github.com/santoshtvk-new/daily_dose">Daily Dose</a> 💻
+    <div class="col-sm-12 eagerbelow" id="pynsheets"   data-toggle="tooltip" data-placement="bottom" title="Expand each section below.">
+        Python Cheatsheets
     </div>
 </div>
 
 
-<!--<div class="row">-->
-<!--    <div class="col-md-4">-->
-<!--        <center>-->
-<!--            <a class="card" href="{{ url_for('gitcmds') }}">-->
-<!--                <img src="static/bg/git.svg" alt="git" style="width:200px">-->
-<!--                <div class="container">-->
-<!--                    <h4><b>Git Commands: Novice to Expert</b></h4>-->
+<div id="accordion" data-toggle="tooltip" data-placement="top" title="Expand Each Section to learn more!">
+{% for k, code_structure in py_structure_details.items() %}
+    <div class="card">
+        <div class="card-header" id="heading{{k}}">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{k}}" aria-expanded="false"
+                        aria-controls="collapse{{k}}" id="py_{{k}}">
+                    {{k.upper()}} ⏩
+                </button>
+            </h5>
+        </div>
 
-<!--                </div>-->
-<!--            </a>-->
-<!--            <p>Explore Git commands skills with our interactive learning platform. <br>Interactive quizzes help you-->
-<!--                track your understanding.</p>-->
-<!--        </center>-->
-<!--    </div>-->
-<!--    <div class="col-md-4">-->
-<!--        <center>-->
-<!--            <a class="card" href="{{ url_for('lnxcmds') }}">-->
-<!--                <img src="static/bg/linux.svg" alt="linux" style="width:200px">-->
-<!--                <div class="container">-->
-<!--                    <h4><b>Linux Shell Scripting</b></h4>-->
+        <div id="collapse{{k}}" class="collapse" aria-labelledby="heading{{k}}" data-parent="#accordion">
+            <div class="card-body">
 
-<!--                </div>-->
-<!--            </a>-->
-<!--            <p>Explore Linux skills with our interactive learning platform. <br>With concise notes and engaging quizzes,-->
-<!--                Understand Shell Commands, Networking and Open Source Customization</p>-->
-<!--        </center>-->
-<!--    </div>-->
-<!--    <div class="col-md-4">-->
-<!--        <center>-->
-<!--            <a class="card" href="{{ url_for('embcmds') }}">-->
-<!--                <img src="static/bg/emb.svg" alt="embedded" style="width:200px">-->
-<!--                <div class="container">-->
-<!--                    <h4><b>Dwell deeper in Embedded Systems</b></h4>-->
+                {% for key, value in code_structure.items() %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{value|safe}}
+                    </div>
+                    <div class="col-sm-6 code_explanation">
+                        {{key|safe}}
+                    </div>
+                </div>
+                {% endfor %}
 
-<!--                </div>-->
-<!--            </a>-->
-<!--            <p>Explore Embedded Systems with Embedded C Scripting, <br>With engaging quizzes, <br>Dwell deeper on-->
-<!--                understanding with RTOS, Kernel and Industrial Applications</p>-->
-<!--        </center>-->
-<!--    </div>-->
-<!--</div>-->
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
 
 
-<!--<div class="row">-->
-<!--    <div class="col-md-12">-->
+<div class="row">
+    <div class="col-sm-12 eagerbelow" id="pynsqlsheets"  data-toggle="tooltip" data-placement="bottom" title="Expand each section below.">
+        SQL Cheatsheets
+    </div>
+</div>
 
-<!--        <p>Welcome to our engaging learning environment! Learn new IT skills and deepen your understanding of Python, Linux, C, and C++. To assist you with understanding the principles of these technologies, our portal provides clear notes and interesting quizzes. Our user-friendly approach simplifies complicated topics so that everyone can learn, regardless of their level of experience. With the help of our interactive tests, you can test your knowledge and review your understanding. Start your journey today and unlock a broad range of IT skills with us! </p>-->
-<!--        Explore Python skills with our interactive learning platform. <br>Interactive quizzes will help you track your understanding-->
-<!--        <iframe src="https://trinket.io/embed/python3/8a85d2da6d?toggleCode=true" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>-->
 
-<!--    </div>-->
-<!--</div>-->
+<div id="accordion2" data-toggle="tooltip" data-placement="top" title="Expand Each Section to learn more!">
+{% for k, code_structure in sql_structure_details.items() %}
+    <div class="card">
+        <div class="card-header" id="heading_{{k}}">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse_{{k}}" aria-expanded="false"
+                        aria-controls="collapse_{{k}}" id="sql_{{k}}">
+                    {{k.upper()}} ⏩
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapse_{{k}}" class="collapse" aria-labelledby="heading_{{k}}" data-parent="#accordion">
+            <div class="card-body">
+
+                {% for key, value in code_structure.items() %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{value|safe}}
+                    </div>
+                    <div class="col-sm-6 code_explanation">
+                        {{key|safe}}
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+<div class="row">
+    <div class="col-sm-12 eagerbelow" id="pyngitsheets"  data-toggle="tooltip" data-placement="bottom" title="Expand each section below.">
+        GIT Version Control Cheatsheets
+    </div>
+</div>
+
+
+<div id="accordion3" data-toggle="tooltip" data-placement="top" title="Expand Each Section to learn more!">
+{% for k, code_structure in git_structure_details.items() %}
+    <div class="card">
+        <div class="card-header" id="heading__{{k}}">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse__{{k}}" aria-expanded="false"
+                        aria-controls="collapse__{{k}}" id="git_{{k}}">
+                    {{k.upper()}} ⏩
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapse__{{k}}" class="collapse" aria-labelledby="heading__{{k}}" data-parent="#accordion">
+            <div class="card-body">
+
+                {% for key, value in code_structure.items() %}
+                <div class="row">
+                    <div class="col-sm-6">
+                        {{value|safe}}
+                    </div>
+                    <div class="col-sm-6 code_explanation">
+                        {{key|safe}}
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+<div class="row">
+    <div class="col-sm-12 eagerbelow">
+        My GITHUB Repo: <a href="https://github.com/santoshtvk-new/">Daily Dose</a> 💻
+    </div>
+</div>
+
 
 {% endblock %}

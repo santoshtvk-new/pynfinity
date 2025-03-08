@@ -20,7 +20,9 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3012929005735832" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-
+    <style>
+        {{code_style}}
+    </style>
 </head>
 
 <body style="padding-top: 50px; padding-bottom: 20px; background: cornsilk; ">
@@ -68,6 +70,7 @@
     <script src="{{url_for('static', filename='scripts/respond.js')}}"></script>
     <script src="{{url_for('static', filename='scripts/support.js')}}"></script>
     <script src="{{url_for('static', filename='scripts/app.js')}}"></script>
+
     {% block scripts %}{% endblock %}
 
 </body>

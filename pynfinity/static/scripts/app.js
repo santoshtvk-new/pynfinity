@@ -109,3 +109,7 @@ function playphonetics() {
 
 findout();
 jokeout();
+
+$('#git_basics').click();
+$('#py_basics').click();
+$('#sql_basics').click();
