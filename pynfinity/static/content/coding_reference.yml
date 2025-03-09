@@ -933,3 +933,1175 @@ linux_shell:
         
         # Decompress a gzip file
         gunzip filename.txt.gz
+
+java:
+  basics:
+    topic-1:
+      title: |
+        Print "Hello, World!" to the Console
+      code: |
+        public class HelloWorld {
+            public static void main(String[] args) {
+                System.out.println("Hello, World!");
+            }
+        }
+
+    topic-2:
+      title: |
+        Declare and Use Variables
+      code: |
+        public class VariablesExample {
+            public static void main(String[] args) {
+                String name = "Santosh";
+                int age = 25;
+                System.out.println("Name: " + name);
+                System.out.println("Age: " + age);
+            }
+        }
+
+    topic-3:
+      title: |
+        Perform Arithmetic Operations
+      code: |
+        public class ArithmeticOperations {
+            public static void main(String[] args) {
+                int a = 10, b = 5;
+                System.out.println("Addition: " + (a + b));
+                System.out.println("Subtraction: " + (a - b));
+                System.out.println("Multiplication: " + (a * b));
+                System.out.println("Division: " + (a / b));
+                System.out.println("Modulus: " + (a % b));
+            }
+        }
+
+    topic-4:
+      title: |
+        Conditional Statements (if-else)
+      code: |
+        public class ConditionalExample {
+            public static void main(String[] args) {
+                int age = 20;
+                if (age >= 18) {
+                    System.out.println("Eligible for voting");
+                } else {
+                    System.out.println("Not eligible for voting");
+                }
+            }
+        }
+
+    topic-5:
+      title: |
+        Using Loops (for, while)
+      code: |
+        public class LoopExample {
+            public static void main(String[] args) {
+                // For loop example
+                for (int i = 1; i <= 5; i++) {
+                    System.out.println("Santosh is learning Java - Iteration: " + i);
+                }
+
+                // While loop example
+                int count = 1;
+                while (count <= 3) {
+                    System.out.println("Dhruv is exploring Java - Attempt: " + count);
+                    count++;
+                }
+            }
+        }
+
+    topic-6:
+      title: |
+        Arrays in Java
+      code: |
+        public class ArrayExample {
+            public static void main(String[] args) {
+                String[] names = {"Santosh", "Kumar", "Dhruv", "Pynfinity"};
+                for (String name : names) {
+                    System.out.println("Name: " + name);
+                }
+            }
+        }
+
+  intermediate:
+    topic-1:
+      title: |
+        Methods in Java
+      code: |
+        public class MethodExample {
+            public static void greet(String name) {
+                System.out.println("Hello, " + name + "! Welcome to Pynfinity channel.");
+            }
+
+            public static void main(String[] args) {
+                greet("Santosh");
+                greet("Kumar");
+            }
+        }
+
+    topic-2:
+      title: |
+        Classes and Objects
+      code: |
+        public class Person {
+            String name;
+            int age;
+
+            // Constructor
+            public Person(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            // Method to display information
+            public void displayInfo() {
+                System.out.println("Name: " + name);
+                System.out.println("Age: " + age);
+            }
+
+            public static void main(String[] args) {
+                Person person1 = new Person("Dhruv", 25);
+                person1.displayInfo();
+            }
+        }
+
+    topic-3:
+      title: |
+        Using Switch-Case
+      code: |
+        public class SwitchExample {
+            public static void main(String[] args) {
+                String day = "Tuesday";
+                switch (day) {
+                    case "Monday":
+                        System.out.println("Start of the week!");
+                        break;
+                    case "Tuesday":
+                        System.out.println("Second day of the week.");
+                        break;
+                    case "Wednesday":
+                        System.out.println("Mid-week day.");
+                        break;
+                    default:
+                        System.out.println("Not a valid day.");
+                        break;
+                }
+            }
+        }
+
+    topic-4:
+      title: |
+        Working with Strings
+      code: |
+        public class StringExample {
+            public static void main(String[] args) {
+                String channelName = "Pynfinity";
+                String message = "Welcome to the " + channelName + " educational channel!";
+                
+                // Length of the string
+                System.out.println("Message length: " + message.length());
+                
+                // Convert to uppercase
+                System.out.println("Uppercase: " + message.toUpperCase());
+                
+                // Check if the string contains a specific word
+                System.out.println("Contains 'educational': " + message.contains("educational"));
+            }
+        }
+
+    topic-5:
+      title: |
+        Exception Handling (try-catch)
+      code: |
+        public class ExceptionExample {
+            public static void main(String[] args) {
+                try {
+                    int result = 10 / 0;
+                } catch (ArithmeticException e) {
+                    System.out.println("Error: Division by zero is not allowed.");
+                }
+            }
+        }
+
+  advanced:
+    topic-1:
+      title: |
+        Inheritance in Java
+      code: |
+        class Animal {
+            void sound() {
+                System.out.println("Animals make sounds");
+            }
+        }
+
+        class Dog extends Animal {
+            void sound() {
+                System.out.println("Dogs bark");
+            }
+        }
+
+        public class InheritanceExample {
+            public static void main(String[] args) {
+                Dog myDog = new Dog();
+                myDog.sound();  // Dog's sound
+            }
+        }
+
+    topic-2:
+      title: |
+        Polymorphism in Java
+      code: |
+        class Animal {
+            void sound() {
+                System.out.println("Animal makes a sound");
+            }
+        }
+
+        class Dog extends Animal {
+            @Override
+            void sound() {
+                System.out.println("Dog barks");
+            }
+        }
+
+        class Cat extends Animal {
+            @Override
+            void sound() {
+                System.out.println("Cat meows");
+            }
+        }
+
+        public class PolymorphismExample {
+            public static void main(String[] args) {
+                Animal myAnimal = new Animal();
+                Animal myDog = new Dog();
+                Animal myCat = new Cat();
+
+                myAnimal.sound();
+                myDog.sound();
+                myCat.sound();
+            }
+        }
+
+    topic-3:
+      title: |
+        Abstract Classes in Java
+      code: |
+        abstract class Animal {
+            abstract void sound();
+        }
+
+        class Dog extends Animal {
+            void sound() {
+                System.out.println("Dog barks");
+            }
+        }
+
+        public class AbstractClassExample {
+            public static void main(String[] args) {
+                Dog myDog = new Dog();
+                myDog.sound();  // Dog's sound
+            }
+        }
+
+    topic-4:
+      title: |
+        Interfaces in Java
+      code: |
+        interface Animal {
+            void sound();
+        }
+
+        class Dog implements Animal {
+            public void sound() {
+                System.out.println("Dog barks");
+            }
+        }
+
+        public class InterfaceExample {
+            public static void main(String[] args) {
+                Dog myDog = new Dog();
+                myDog.sound();  // Dog's sound
+            }
+        }
+
+    topic-5:
+      title: |
+        Working with Collections (ArrayList)
+      code: |
+        import java.util.ArrayList;
+
+        public class CollectionExample {
+            public static void main(String[] args) {
+                ArrayList<String> names = new ArrayList<>();
+                names.add("Santosh");
+                names.add("Kumar");
+                names.add("Dhruv");
+                
+                // Print all elements
+                for (String name : names) {
+                    System.out.println("Name: " + name);
+                }
+            }
+        }
+
+    topic-6:
+      title: |
+        File Handling in Java
+      code: |
+        import java.io.*;
+
+        public class FileHandlingExample {
+            public static void main(String[] args) {
+                try {
+                    FileWriter writer = new FileWriter("example.txt");
+                    writer.write("Hello, this is a test file for Pynfinity educational channel.");
+                    writer.close();
+                    
+                    FileReader reader = new FileReader("example.txt");
+                    int i;
+                    while ((i = reader.read()) != -1) {
+                        System.out.print((char) i);
+                    }
+                    reader.close();
+                } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                }
+            }
+        }
+
+pandas:
+  basics:
+    topic-1:
+      title: |
+        Create a Pandas DataFrame and Display it
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', 'Pynfinity'],
+            'Age': [25, 30, 22, 24],
+            'Channel': ['TVS', 'Educational', 'Channel', 'Pynfinity']
+        }
+
+        df = pd.DataFrame(data)
+        print(df)
+
+    topic-2:
+      title: |
+        Select a Column from DataFrame
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', 'Pynfinity'],
+            'Age': [25, 30, 22, 24]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Select a column
+        print(df['Name'])
+
+    topic-3:
+      title: |
+        Filter Rows Based on Condition
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', 'Pynfinity'],
+            'Age': [25, 30, 22, 24]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Filter rows where Age is greater than 24
+        filtered_df = df[df['Age'] > 24]
+        print(filtered_df)
+
+    topic-4:
+      title: |
+        Adding New Column to DataFrame
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', 'Pynfinity'],
+            'Age': [25, 30, 22, 24]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Add a new column
+        df['Channel'] = ['TVS', 'Educational', 'Channel', 'Pynfinity']
+        print(df)
+
+    topic-5:
+      title: |
+        Handle Missing Data in Pandas
+      code: |
+        import pandas as pd
+        import numpy as np
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', np.nan],
+            'Age': [25, 30, np.nan, 24]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Fill missing data
+        df['Name'].fillna('Unknown', inplace=True)
+        df['Age'].fillna(df['Age'].mean(), inplace=True)
+
+        print(df)
+
+  intermediate:
+    topic-1:
+      title: |
+        Group Data by Column
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', 'Pynfinity'],
+            'Age': [25, 30, 22, 24],
+            'Channel': ['TVS', 'Educational', 'Channel', 'Pynfinity']
+        }
+
+        df = pd.DataFrame(data)
+
+        # Group by Channel and calculate mean age
+        grouped = df.groupby('Channel')['Age'].mean()
+        print(grouped)
+
+    topic-2:
+      title: |
+        Sorting Data in DataFrame
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', 'Pynfinity'],
+            'Age': [25, 30, 22, 24]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Sort by Age in descending order
+        sorted_df = df.sort_values(by='Age', ascending=False)
+        print(sorted_df)
+
+    topic-3:
+      title: |
+        Merge Two DataFrames
+      code: |
+        import pandas as pd
+
+        data1 = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv'],
+            'Age': [25, 30, 22]
+        }
+        data2 = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv'],
+            'Channel': ['TVS', 'Educational', 'Channel']
+        }
+
+        df1 = pd.DataFrame(data1)
+        df2 = pd.DataFrame(data2)
+
+        # Merge the DataFrames on 'Name'
+        merged_df = pd.merge(df1, df2, on='Name')
+        print(merged_df)
+
+    topic-4:
+      title: |
+        Apply Functions to Columns
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv'],
+            'Age': [25, 30, 22]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Apply a function to the Age column
+        df['Age'] = df['Age'].apply(lambda x: x + 1)
+        print(df)
+
+  advanced:
+    topic-1:
+      title: |
+        Pivot Table in Pandas
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', 'Pynfinity'],
+            'Age': [25, 30, 22, 24],
+            'Channel': ['TVS', 'Educational', 'Channel', 'Pynfinity']
+        }
+
+        df = pd.DataFrame(data)
+
+        # Create a pivot table
+        pivot_table = df.pivot_table(values='Age', index='Channel', aggfunc='mean')
+        print(pivot_table)
+
+    topic-2:
+      title: |
+        Handle Duplicates in DataFrame
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv', 'Dhruv', 'Pynfinity'],
+            'Age': [25, 30, 22, 22, 24]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Remove duplicates based on 'Name'
+        df_no_duplicates = df.drop_duplicates(subset='Name')
+        print(df_no_duplicates)
+
+    topic-3:
+      title: |
+        Save DataFrame to CSV
+      code: |
+        import pandas as pd
+
+        data = {
+            'Name': ['Santosh', 'Kumar', 'Dhruv'],
+            'Age': [25, 30, 22]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Save DataFrame to CSV file
+        df.to_csv('output.csv', index=False)
+        print("DataFrame saved to CSV.")
+
+    topic-4:
+      title: |
+        Load DataFrame from CSV
+      code: |
+        import pandas as pd
+
+        # Load data from a CSV file
+        df = pd.read_csv('output.csv')
+        print(df)
+
+selenium:
+  basics:
+    topic-1:
+      title: |
+        Setup WebDriver and Open a Website
+      code: |
+        from selenium import webdriver
+
+        # Setup the WebDriver
+        driver = webdriver.Chrome()
+
+        # Open a website
+        driver.get("https://www.google.com")
+
+        # Close the browser
+        driver.quit()
+
+    topic-2:
+      title: |
+        Find Elements by ID and Click
+      code: |
+        from selenium import webdriver
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.google.com")
+
+        # Find an element by its ID and click
+        search_box = driver.find_element_by_id("lst-ib")
+        search_box.send_keys("Pynfinity Educational Channel")
+        search_box.submit()
+
+        # Close the browser
+        driver.quit()
+
+    topic-3:
+      title: |
+        Find Elements by Class Name
+      code: |
+        from selenium import webdriver
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.google.com")
+
+        # Find an element by its class name
+        result = driver.find_element_by_class_name("g")
+        print(result.text)
+
+        driver.quit()
+
+    topic-4:
+      title: |
+        Wait for an Element to Appear
+      code: |
+        from selenium import webdriver
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support.ui import WebDriverWait
+        from selenium.webdriver.support import expected_conditions as EC
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.google.com")
+
+        # Wait until the element is visible
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.ID, "lst-ib"))
+        )
+
+        driver.quit()
+
+    topic-5:
+      title: |
+        Interact with a Dropdown
+      code: |
+        from selenium import webdriver
+        from selenium.webdriver.support.ui import Select
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.yourwebsite.com")
+
+        # Locate dropdown
+        dropdown = driver.find_element_by_id("dropdown_id")
+        select = Select(dropdown)
+
+        # Select option by visible text
+        select.select_by_visible_text("Option 1")
+
+        driver.quit()
+
+  intermediate:
+    topic-1:
+      title: |
+        Working with Multiple Browser Tabs
+      code: |
+        from selenium import webdriver
+        import time
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.google.com")
+
+        # Open a new tab
+        driver.execute_script("window.open('');")
+        driver.switch_to.window(driver.window_handles[1])
+
+        # Navigate to another website in the new tab
+        driver.get("https://www.youtube.com")
+
+        # Switch back to the first tab
+        driver.switch_to.window(driver.window_handles[0])
+
+        driver.quit()
+
+    topic-2:
+      title: |
+        Taking a Screenshot of a Webpage
+      code: |
+        from selenium import webdriver
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.google.com")
+
+        # Take a screenshot
+        driver.save_screenshot("google_screenshot.png")
+
+        driver.quit()
+
+    topic-3:
+      title: |
+        Handling Alerts in Selenium
+      code: |
+        from selenium import webdriver
+        from selenium.webdriver.common.alert import Alert
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.yourwebsite.com")
+
+        # Trigger alert
+        driver.execute_script("alert('This is a test alert!');")
+
+        # Switch to alert and accept it
+        alert = Alert(driver)
+        alert.accept()
+
+        driver.quit()
+
+    topic-4:
+      title: |
+        Extract Text from a Web Element
+      code: |
+        from selenium import webdriver
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.example.com")
+
+        # Extract text from an element
+        heading = driver.find_element_by_tag_name("h1")
+        print("Heading text: ", heading.text)
+
+        driver.quit()
+
+  advanced:
+    topic-1:
+      title: |
+        Handling Dynamic Content with Selenium
+      code: |
+        from selenium import webdriver
+        from selenium.webdriver.common.by import By
+        from selenium.webdriver.support.ui import WebDriverWait
+        from selenium.webdriver.support import expected_conditions as EC
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.example.com")
+
+        # Wait for dynamic content to load
+        dynamic_content = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "dynamic_content"))
+        )
+
+        print(dynamic_content.text)
+        driver.quit()
+
+    topic-2:
+      title: |
+        Automate Form Submission with Selenium
+      code: |
+        from selenium import webdriver
+
+        driver = webdriver.Chrome()
+        driver.get("https://www.example.com/form")
+
+        # Fill out a form
+        name_input = driver.find_element_by_name("name")
+        name_input.send_keys("Santosh Kumar")
+
+        email_input = driver.find_element_by_name("email")
+        email_input.send_keys("santosh@example.com")
+
+        # Submit the form
+        submit_button = driver.find_element_by_name("submit")
+        submit_button.click()
+
+        driver.quit()
+
+c:
+  basics:
+    topic-1:
+      title: |
+        Print "Hello, World!" to the Console
+      code: |
+        #include <stdio.h>
+
+        int main() {
+            printf("Hello, World!\n");
+            return 0;
+        }
+
+    topic-2:
+      title: |
+        Declare and Use Variables
+      code: |
+        #include <stdio.h>
+
+        int main() {
+            char name[] = "Santosh";
+            int age = 25;
+            printf("Name: %s\n", name);
+            printf("Age: %d\n", age);
+            return 0;
+        }
+
+    topic-3:
+      title: |
+        Perform Arithmetic Operations
+      code: |
+        #include <stdio.h>
+
+        int main() {
+            int a = 10, b = 5;
+            printf("Addition: %d\n", a + b);
+            printf("Subtraction: %d\n", a - b);
+            printf("Multiplication: %d\n", a * b);
+            printf("Division: %d\n", a / b);
+            printf("Modulus: %d\n", a % b);
+            return 0;
+        }
+
+    topic-4:
+      title: |
+        Conditional Statements (if-else)
+      code: |
+        #include <stdio.h>
+
+        int main() {
+            int age = 20;
+            if (age >= 18) {
+                printf("Eligible for voting\n");
+            } else {
+                printf("Not eligible for voting\n");
+            }
+            return 0;
+        }
+
+    topic-5:
+      title: |
+        Loops (for, while)
+      code: |
+        #include <stdio.h>
+
+        int main() {
+            // For loop example
+            for (int i = 1; i <= 5; i++) {
+                printf("Santosh is learning C - Iteration: %d\n", i);
+            }
+
+            // While loop example
+            int count = 1;
+            while (count <= 3) {
+                printf("Dhruv is exploring C - Attempt: %d\n", count);
+                count++;
+            }
+            return 0;
+        }
+
+  intermediate:
+    topic-1:
+      title: |
+        Functions in C
+      code: |
+        #include <stdio.h>
+
+        void greet(char name[]) {
+            printf("Hello, %s! Welcome to Pynfinity.\n", name);
+        }
+
+        int main() {
+            greet("Santosh");
+            greet("Kumar");
+            return 0;
+        }
+
+    topic-2:
+      title: |
+        Arrays in C
+      code: |
+        #include <stdio.h>
+
+        int main() {
+            char names[4][10] = {"Santosh", "Kumar", "Dhruv", "Pynfinity"};
+            for (int i = 0; i < 4; i++) {
+                printf("Name: %s\n", names[i]);
+            }
+            return 0;
+        }
+
+    topic-3:
+      title: |
+        Pointers in C
+      code: |
+        #include <stdio.h>
+
+        int main() {
+            int num = 10;
+            int *ptr = &num;
+
+            printf("Value of num: %d\n", num);
+            printf("Address of num: %p\n", &num);
+            printf("Value stored at ptr: %d\n", *ptr);
+
+            return 0;
+        }
+
+    topic-4:
+      title: |
+        Strings in C
+      code: |
+        #include <stdio.h>
+        #include <string.h>
+
+        int main() {
+            char str[20] = "Pynfinity Channel";
+
+            printf("String: %s\n", str);
+            printf("Length of string: %lu\n", strlen(str));
+
+            // Copy string
+            char copy[20];
+            strcpy(copy, str);
+            printf("Copied string: %s\n", copy);
+
+            return 0;
+        }
+
+  advanced:
+    topic-1:
+      title: |
+        Structures in C
+      code: |
+        #include <stdio.h>
+
+        struct Person {
+            char name[20];
+            int age;
+        };
+
+        int main() {
+            struct Person p1 = {"Santosh", 25};
+            struct Person p2 = {"Kumar", 30};
+
+            printf("Name: %s, Age: %d\n", p1.name, p1.age);
+            printf("Name: %s, Age: %d\n", p2.name, p2.age);
+            return 0;
+        }
+
+    topic-2:
+      title: |
+        File Handling in C
+      code: |
+        #include <stdio.h>
+
+        int main() {
+            FILE *file = fopen("example.txt", "w");
+
+            if (file == NULL) {
+                printf("Could not open file\n");
+                return 1;
+            }
+
+            fprintf(file, "This is a test file created by Santosh.\n");
+            fclose(file);
+
+            // Reading from file
+            file = fopen("example.txt", "r");
+            char ch;
+            while ((ch = fgetc(file)) != EOF) {
+                putchar(ch);
+            }
+            fclose(file);
+
+            return 0;
+        }
+cpp:
+  basics:
+    topic-1:
+      title: |
+        Print "Hello, World!" to the Console
+      code: |
+        #include <iostream>
+
+        int main() {
+            std::cout << "Hello, World!" << std::endl;
+            return 0;
+        }
+
+    topic-2:
+      title: |
+        Declare and Use Variables
+      code: |
+        #include <iostream>
+
+        int main() {
+            std::string name = "Santosh";
+            int age = 25;
+            std::cout << "Name: " << name << std::endl;
+            std::cout << "Age: " << age << std::endl;
+            return 0;
+        }
+
+    topic-3:
+      title: |
+        Perform Arithmetic Operations
+      code: |
+        #include <iostream>
+
+        int main() {
+            int a = 10, b = 5;
+            std::cout << "Addition: " << a + b << std::endl;
+            std::cout << "Subtraction: " << a - b << std::endl;
+            std::cout << "Multiplication: " << a * b << std::endl;
+            std::cout << "Division: " << a / b << std::endl;
+            std::cout << "Modulus: " << a % b << std::endl;
+            return 0;
+        }
+
+    topic-4:
+      title: |
+        Conditional Statements (if-else)
+      code: |
+        #include <iostream>
+
+        int main() {
+            int age = 20;
+            if (age >= 18) {
+                std::cout << "Eligible for voting" << std::endl;
+            } else {
+                std::cout << "Not eligible for voting" << std::endl;
+            }
+            return 0;
+        }
+
+    topic-5:
+      title: |
+        Loops (for, while)
+      code: |
+        #include <iostream>
+
+        int main() {
+            // For loop example
+            for (int i = 1; i <= 5; i++) {
+                std::cout << "Santosh is learning C++ - Iteration: " << i << std::endl;
+            }
+
+            // While loop example
+            int count = 1;
+            while (count <= 3) {
+                std::cout << "Dhruv is exploring C++ - Attempt: " << count << std::endl;
+                count++;
+            }
+            return 0;
+        }
+
+  intermediate:
+    topic-1:
+      title: |
+        Functions in C++
+      code: |
+        #include <iostream>
+
+        void greet(std::string name) {
+            std::cout << "Hello, " << name << "! Welcome to Pynfinity." << std::endl;
+        }
+
+        int main() {
+            greet("Santosh");
+            greet("Kumar");
+            return 0;
+        }
+
+    topic-2:
+      title: |
+        Arrays in C++
+      code: |
+        #include <iostream>
+
+        int main() {
+            std::string names[4] = {"Santosh", "Kumar", "Dhruv", "Pynfinity"};
+            for (int i = 0; i < 4; i++) {
+                std::cout << "Name: " << names[i] << std::endl;
+            }
+            return 0;
+        }
+
+    topic-3:
+      title: |
+        Pointers in C++
+      code: |
+        #include <iostream>
+
+        int main() {
+            int num = 10;
+            int *ptr = &num;
+
+            std::cout << "Value of num: " << num << std::endl;
+            std::cout << "Address of num: " << &num << std::endl;
+            std::cout << "Value stored at ptr: " << *ptr << std::endl;
+
+            return 0;
+        }
+
+    topic-4:
+      title: |
+        Strings in C++
+      code: |
+        #include <iostream>
+        #include <string>
+
+        int main() {
+            std::string str = "Pynfinity Channel";
+
+            std::cout << "String: " << str << std::endl;
+            std::cout << "Length of string: " << str.length() << std::endl;
+
+            // Copy string
+            std::string copy = str;
+            std::cout << "Copied string: " << copy << std::endl;
+
+            return 0;
+        }
+
+  advanced:
+    topic-1:
+      title: |
+        Classes and Objects in C++
+      code: |
+        #include <iostream>
+
+        class Person {
+        public:
+            std::string name;
+            int age;
+
+            // Constructor
+            Person(std::string n, int a) {
+                name = n;
+                age = a;
+            }
+
+            void display() {
+                std::cout << "Name: " << name << ", Age: " << age << std::endl;
+            }
+        };
+
+        int main() {
+            Person p1("Santosh", 25);
+            p1.display();
+
+            Person p2("Kumar", 30);
+            p2.display();
+
+            return 0;
+        }
+
+    topic-2:
+      title: |
+        File Handling in C++
+      code: |
+        #include <iostream>
+        #include <fstream>
+
+        int main() {
+            std::ofstream outFile("example.txt");
+
+            if (outFile.is_open()) {
+                outFile << "This is a test file created by Santosh.\n";
+                outFile.close();
+            } else {
+                std::cout << "Unable to open file" << std::endl;
+            }
+
+            // Reading from the file
+            std::ifstream inFile("example.txt");
+            std::string line;
+            if (inFile.is_open()) {
+                while (getline(inFile, line)) {
+                    std::cout << line << std::endl;
+                }
+                inFile.close();
+            } else {
+                std::cout << "Unable to open file" << std::endl;
+            }
+
+            return 0;
+        }

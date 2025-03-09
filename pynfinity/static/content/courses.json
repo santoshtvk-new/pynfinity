@@ -22,5 +22,35 @@
     "content": "",
     "title": "Complete Linux Shell commands for quick reference",
     "description": "Key Topics Covered:\nBasics: Navigating directories, creating/removing files, viewing file contents, file permissions, and basic output redirection.\nIntermediate: Piping commands, using variables, shell loops, conditionals, processes, and file searches.\nAdvanced: Functions, cron jobs, shell scripting, AWK, Sed, networking commands, and file compression/archiving."
+  },
+  "java": {
+    "icon": "java.svg",
+    "content": "",
+    "title": "Complete Java language examples for quick reference",
+    "description": "Key Topics Covered:\nBasics: Printing to the console, variables, arithmetic operations, conditional statements, loops, and arrays.\nIntermediate: Methods, classes and objects, switch-case, strings, and exception handling.\nAdvanced: Inheritance, polymorphism, abstract classes, interfaces, collections (ArrayList), and file handling."
+  },
+  "selenium": {
+    "icon": "selenium.svg",
+    "content": "",
+    "title": "Selenium Syntaxes and examples for quick reference",
+    "description": "Basic automation, handling forms, browser windows, working with alerts, screenshots, dropdowns, and dynamic content."
+  },
+  "pandas": {
+    "icon": "pandas.svg",
+    "content": "",
+    "title": "Python pandas module examples for quick reference",
+    "description": "Creating DataFrames, selecting columns, filtering data, handling missing data, merging DataFrames, pivot tables, sorting, etc."
+  },
+  "c": {
+    "icon": "c.svg",
+    "content": "",
+    "title": "Complete C language Syntax and examples for quick reference",
+    "description": "Basic operations, arrays, pointers, file handling, functions, and structures."
+  },
+  "cpp": {
+    "icon": "cpp.svg",
+    "content": "",
+    "title": "Complete C++ language Syntax and examples for quick reference",
+    "description": "Classes, objects, file handling, and functions, along with advanced concepts like inheritance."
   }
 }

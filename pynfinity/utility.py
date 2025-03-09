@@ -1,13 +1,18 @@
 import datetime
 import json
 from os.path import join, dirname
+
 import flask
 import yaml
 from flask import request
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
+from pygments.lexers import BashLexer
 from pygments.lexers import PythonLexer
-
+from pygments.lexers import SqlLexer
+from pygments.lexers import JavaLexer
+from pygments.lexers import CLexer
+from pygments.lexers import CppLexer
 
 try:
     import sqlite3
@@ -16,6 +21,16 @@ try:
 except Exception:
     pass
 
+available_lexer = {
+    'python': PythonLexer(),
+    'sql': SqlLexer(),
+    'linux_shell': BashLexer(),
+    'java': JavaLexer(),
+    'selenium': JavaLexer(),
+    'pandas': PythonLexer(),
+    'c': CLexer(),
+    'cpp': CppLexer()
+}
 code_yml_reference = join(dirname(__file__), "static/content/coding_reference.yml")
 courses_json_reference = join(dirname(__file__), "static/content/courses.json")
 images_directory = join("static", "bg")
@@ -97,6 +112,8 @@ def git_content():
 
 
 def all_coding_stuff(language="python"):
+    lexer = available_lexer.get(language, PythonLexer())
+
     with open(code_yml_reference) as f:
         try:
             code_complete = yaml.safe_load(f)
@@ -110,7 +127,7 @@ def all_coding_stuff(language="python"):
         category = {}
         for k in yml_py[toughness].keys():
             category[yml_py[toughness][k]['title']] = highlight(yml_py[toughness][k]['code'],
-                                                                PythonLexer(),
+                                                                lexer,
                                                                 HtmlFormatter())
             python_complete_stuff[toughness] = category
     return python_complete_stuff
