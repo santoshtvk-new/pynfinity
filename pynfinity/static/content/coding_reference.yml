@@ -30,7 +30,7 @@ python:
         print("Age:", age)
         
         # String
-        name = "John"
+        name = "Santosh"
         print("Name:", name)
         
         # Float
@@ -104,9 +104,9 @@ python:
         Dictionaries in Python
       code: |
         person = {
-          "name": "Alice",
+          "name": "Santosh",
           "age": 30,
-          "city": "New York"
+          "city": "India"
         }
         print("Person Dictionary:", person)
         
@@ -169,7 +169,7 @@ python:
       code: |
         # Writing to a file
         with open("sample.txt", "w") as file:
-          file.write("Hello, this is a Python file.")
+          file.write("Hello, this is written with Python.")
         
         # Reading from a file
         with open("sample.txt", "r") as file:
@@ -190,7 +190,7 @@ python:
             print(f"Hello, my name is {self.name} and I am {self.age} years old.")
         
         # Creating an object of the Person class
-        person1 = Person("John", 25)
+        person1 = Person("Santosh", 25)
         person1.greet()
 
     topic-2:
@@ -255,9 +255,9 @@ sql:
         );
         
         INSERT INTO employees (id, name, age, department)
-        VALUES (1, 'John Doe', 30, 'Engineering'),
-               (2, 'Jane Smith', 25, 'Marketing'),
-               (3, 'Mike Johnson', 35, 'HR');
+        VALUES (1, 'Santosh K', 30, 'Engineering'),
+               (2, 'T V Santosh', 25, 'Marketing'),
+               (3, 'Dhruv', 35, 'HR');
         
         SELECT * FROM employees;
 
@@ -296,7 +296,7 @@ sql:
         Deleting Data with DELETE Statement
       code: |
         DELETE FROM employees
-        WHERE name = 'Mike Johnson';
+        WHERE name = 'Dhruv K';
         
         SELECT * FROM employees;
 
@@ -404,13 +404,13 @@ sql:
       code: |
         BEGIN;
         
-        UPDATE employees SET age = 40 WHERE name = 'Jane Smith';
+        UPDATE employees SET age = 40 WHERE name = 'Santosh K';
         
         COMMIT;
         
         -- ROLLBACK example:
         -- BEGIN;
-        -- DELETE FROM employees WHERE name = 'John Doe';
+        -- DELETE FROM employees WHERE name = 'Santosh K';
         -- ROLLBACK;
 
     topic-5:
