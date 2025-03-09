@@ -47,7 +47,7 @@ def contact():
     """Renders the contact page."""
     return render_template(
         'contact.html',
-        title="☎ Video Call for you",
+        title="☎ Wish to Connect",
         year=datetime.now().year,
     )
 
