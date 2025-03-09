@@ -332,8 +332,8 @@ border:0px !important;
 .word_container {
     padding: 5px;
     width: 80%;
-    border: none;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
     margin-bottom: 10vh;
     min-height:30vh;
 }
@@ -513,7 +513,8 @@ list-style-type: none;
 }
 
 .course_icon .card{
-    width: 100px;
+    width: 100%;
+    padding: 2%;
 }
 
 .course_icon .card-img-top{
@@ -524,5 +525,5 @@ list-style-type: none;
 .course_icon .card-text{
     font-family: cursive;
     color: var(--choco);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }

@@ -75,3 +75,14 @@ def about():
         year=datetime.now().year,
         message='Few points about me...'
     )
+
+
+@app.route('/test_api')
+def api_testing():
+    """Renders the about page."""
+    return render_template(
+        'about.html',
+        title='About',
+        year=datetime.now().year,
+        message='Few points about me...'
+    )
