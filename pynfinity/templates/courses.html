@@ -1,0 +1,57 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<div id="topmargin"></div>
+
+<div class="row">
+    <div class="col-sm-12 eagerbelow" data-placement="bottom" data-toggle="tooltip" id="pynsheets"
+         title="Expand each section below.">
+        {{course}} Cheatsheets
+    </div>
+</div>
+
+
+<div data-placement="top" data-toggle="tooltip" id="accordion" title="Expand Each Section to learn more!">
+    {% for k, code_structure in code_structure_details.items() %}
+    <div class="card">
+        <div class="card-header" id="heading{{k}}">
+            <h5 class="mb-0">
+                <button aria-controls="collapse{{k}}" aria-expanded="false" class="btn btn-link collapsed"
+                        data-target="#collapse{{k}}"
+                        data-toggle="collapse" id="code_{{k}}">
+                    {{k.upper()}} ⏩
+                </button>
+            </h5>
+        </div>
+
+        <div aria-labelledby="heading{{k}}" class="collapse" data-parent="#accordion" id="collapse{{k}}">
+            <div class="card-body">
+
+                {% for key, value in code_structure.items() %}
+                <div class="row">
+
+                    <div class="col-sm-6 code_explanation">
+                        {{key|safe}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{value|safe}}
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12 eagerbelow">
+        My GITHUB Repo: <a href="https://github.com/santoshtvk-new/">Daily Dose</a> 💻
+    </div>
+</div>
+
+
+{% endblock %}

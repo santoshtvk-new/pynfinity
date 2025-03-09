@@ -1,0 +1,26 @@
+{
+  "python": {
+    "icon": "py.svg",
+    "content": "",
+    "title": "Complete Python Code snippet for quick reference",
+    "description": "Key Topics Covered:\nBasics: Arithmetic, Variables, Lists, Conditionals, Loops, Functions.\nIntermediate: Dictionaries, String manipulation, List comprehensions, Error handling, Lambda functions, File handling.\nAdvanced: OOP, Generators, Decorators, JSON."
+  },
+  "sql": {
+    "icon": "sql.svg",
+    "content": "",
+    "title": "Complete SQL Code Examples for quick reference",
+    "description": "Key Topics Covered:\nBasics: Creating tables, inserting, updating, deleting data, and basic SELECT queries.\nIntermediate: Joins, aggregate functions, grouping, filtering, pattern matching, and subqueries.\nAdvanced: Union operations, views, indexes, transactions, advanced joins, conditional logic, and stored procedures."
+  },
+  "git": {
+    "icon": "git.svg",
+    "content": "",
+    "title": "Complete GIT Version Control syntax for quick reference",
+    "description": "Key Topics Covered:\nBasics: Initializing repositories, checking status, adding files, committing, cloning, and viewing history.\nIntermediate: Branching, merging, deleting branches, stashing changes, working with remote repositories, and undoing changes.\nAdvanced: Rebasing, cherry-picking commits, tagging, resetting and reverting commits, resolving merge conflicts, and squashing commits."
+  },
+  "linux_shell": {
+    "icon": "linux.svg",
+    "content": "",
+    "title": "Complete Linux Shell commands for quick reference",
+    "description": "Key Topics Covered:\nBasics: Navigating directories, creating/removing files, viewing file contents, file permissions, and basic output redirection.\nIntermediate: Piping commands, using variables, shell loops, conditionals, processes, and file searches.\nAdvanced: Functions, cron jobs, shell scripting, AWK, Sed, networking commands, and file compression/archiving."
+  }
+}

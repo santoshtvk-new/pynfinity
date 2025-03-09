@@ -1,8 +1,13 @@
 import datetime
 import json
-from os.path import dirname, join
-
+from os.path import join, dirname
+import flask
+import yaml
 from flask import request
+from pygments import highlight
+from pygments.formatters import HtmlFormatter
+from pygments.lexers import PythonLexer
+
 
 try:
     import sqlite3
@@ -10,6 +15,10 @@ try:
     from getmac import get_mac_address as gma
 except Exception:
     pass
+
+code_yml_reference = join(dirname(__file__), "static/content/coding_reference.yml")
+courses_json_reference = join(dirname(__file__), "static/content/courses.json")
+images_directory = join("static", "bg")
 
 
 def create_connection(db_file):
@@ -85,3 +94,34 @@ def git_content():
                         """
         count += 1
     return git_complete
+
+
+def all_coding_stuff(language="python"):
+    with open(code_yml_reference) as f:
+        try:
+            code_complete = yaml.safe_load(f)
+        except Exception as e:
+            print(e)
+            code_complete = {}
+
+    python_complete_stuff = {}
+    yml_py = code_complete[language]
+    for toughness in yml_py.keys():
+        category = {}
+        for k in yml_py[toughness].keys():
+            category[yml_py[toughness][k]['title']] = highlight(yml_py[toughness][k]['code'],
+                                                                PythonLexer(),
+                                                                HtmlFormatter())
+            python_complete_stuff[toughness] = category
+    return python_complete_stuff
+
+
+def content_to_html():
+    courses = json.loads(open(courses_json_reference).read())
+    for crs in courses.keys():
+        courses[crs]["icon"] = join(images_directory, courses[crs]["icon"])
+        courses[crs]["content"] = f"{flask.request.base_url}/courses/{crs}"
+        courses[crs]["description"] = str(courses[crs]["description"]).replace('\n', '<br>')
+    print(courses.keys())
+    il = list(courses.items())
+    return [dict(il[i:i + 3]) for i in range(0, len(il), 3)]

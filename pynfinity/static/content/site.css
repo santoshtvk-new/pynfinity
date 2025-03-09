@@ -178,11 +178,11 @@ input[type="checkbox"].input-validation-error {
     z-index: 3;
 }
 
-    #intro span {
-        color: var(--nbg1);
-        font-weight: bold;
-        text-decoration: underline;
-    }
+#intro span {
+    color: var(--nbg1);
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 #intro li {
     margin-bottom: 50px;
@@ -440,11 +440,6 @@ list-style-type: none;
     color: #ccc;
 }
 
-#animate_home {
-    width: 100%;
-    height: 20vh;
-    padding: 5px;
-}
 
 .chapter_content {
     padding: 2%;
@@ -506,4 +501,28 @@ list-style-type: none;
 
 #jaas-container{
     height: 600px;
+}
+
+.course_icon .card-title{
+    font-family: 'Comfortaa', cursive;
+    background: var(--choco);
+    color: var(--whitish);
+    padding: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.course_icon .card{
+    width: 100px;
+}
+
+.course_icon .card-img-top{
+    margin: auto;
+    display: block;
+}
+
+.course_icon .card-text{
+    font-family: cursive;
+    color: var(--choco);
+    font-size: 1.2rem;
 }

@@ -672,3 +672,264 @@ git:
         # Change 'pick' to 'squash' for the commits to combine
         
         # After finishing, you'll have one commit containing all the changes
+
+linux_shell:
+  basics:
+    topic-1:
+      title: |
+        Navigating the File System
+      code: |
+        # Print the current working directory
+        pwd
+        
+        # List files and directories
+        ls
+        
+        # Change directory
+        cd /path/to/directory
+        
+        # Go to home directory
+        cd ~
+        
+        # Go up one directory
+        cd ..
+
+    topic-2:
+      title: |
+        Creating and Removing Files and Directories
+      code: |
+        # Create a new directory
+        mkdir new_directory
+        
+        # Create a new file
+        touch new_file.txt
+        
+        # Remove a file
+        rm new_file.txt
+        
+        # Remove a directory
+        rmdir new_directory
+        
+        # Remove a directory and its contents
+        rm -r directory_name
+
+    topic-3:
+      title: |
+        Viewing File Contents
+      code: |
+        # View the contents of a file
+        cat filename.txt
+        
+        # View the contents of a file with pagination
+        less filename.txt
+        
+        # View the first few lines of a file
+        head filename.txt
+        
+        # View the last few lines of a file
+        tail filename.txt
+
+    topic-4:
+      title: |
+        File Permissions and Ownership
+      code: |
+        # View file permissions and ownership
+        ls -l filename.txt
+        
+        # Change file permissions (read, write, execute)
+        chmod 755 filename.txt
+        
+        # Change file owner
+        sudo chown user:group filename.txt
+
+    topic-5:
+      title: |
+        Redirecting Output
+      code: |
+        # Redirect output to a file (overwrite)
+        echo "Hello World" > output.txt
+        
+        # Append output to a file
+        echo "New Line" >> output.txt
+        
+        # Redirect stderr to a file
+        ls non_existent_file 2> error.txt
+        
+        # Redirect both stdout and stderr to the same file
+        ls valid_file non_existent_file &> output_and_error.txt
+
+  intermediate:
+    topic-1:
+      title: |
+        Piping Commands
+      code: |
+        # Use a pipe to send the output of one command to another
+        cat filename.txt | grep "search_term"
+        
+        # Chain multiple commands together
+        cat filename.txt | grep "search_term" | wc -l
+
+    topic-2:
+      title: |
+        Using Variables in Shell
+      code: |
+        # Declare a variable
+        my_variable="Hello World"
+        
+        # Use the variable
+        echo $my_variable
+        
+        # Assign the output of a command to a variable
+        file_count=$(ls | wc -l)
+        echo "Number of files: $file_count"
+
+    topic-3:
+      title: |
+        Basic Shell Loops
+      code: |
+        # For loop to print numbers from 1 to 5
+        for i in {1..5}; do
+          echo $i
+        done
+        
+        # While loop to count down from 5
+        count=5
+        while [ $count -gt 0 ]; do
+          echo $count
+          ((count--))
+        done
+
+    topic-4:
+      title: |
+        Using Conditional Statements (if-else)
+      code: |
+        # Check if a file exists
+        if [ -f "filename.txt" ]; then
+          echo "File exists"
+        else
+          echo "File does not exist"
+        fi
+        
+        # Check if a directory exists
+        if [ -d "directory_name" ]; then
+          echo "Directory exists"
+        fi
+
+    topic-5:
+      title: |
+        Working with Processes
+      code: |
+        # List all running processes
+        ps
+        
+        # List all processes, including background jobs
+        ps aux
+        
+        # Kill a process by PID
+        kill <pid>
+        
+        # Run a command in the background
+        command &
+
+    topic-6:
+      title: |
+        Searching Files and Directories
+      code: |
+        # Find a file by name
+        find /path/to/search -name "filename.txt"
+        
+        # Search for a string in a file
+        grep "search_term" filename.txt
+        
+        # Search for a string in all files in a directory
+        grep -r "search_term" /path/to/directory
+
+  advanced:
+    topic-1:
+      title: |
+        Creating and Using Functions
+      code: |
+        # Define a function
+        my_function() {
+          echo "Hello from the function"
+        }
+        
+        # Call the function
+        my_function
+
+    topic-2:
+      title: |
+        Using Cron Jobs for Scheduling
+      code: |
+        # Edit crontab (schedule tasks)
+        crontab -e
+        
+        # Example cron job to run a script every day at 2am
+        0 2 * * * /path/to/script.sh
+        
+        # List scheduled cron jobs
+        crontab -l
+
+    topic-3:
+      title: |
+        Shell Scripting with Conditionals and Loops
+      code: |
+        # Shell script that checks if a directory exists and lists its contents
+        if [ -d "$1" ]; then
+          echo "Directory exists. Listing contents:"
+          ls "$1"
+        else
+          echo "Directory does not exist."
+        fi
+
+    topic-4:
+      title: |
+        Using AWK for Text Processing
+      code: |
+        # Print the first column of a text file
+        awk '{print $1}' filename.txt
+        
+        # Sum the values in the second column
+        awk '{sum += $2} END {print sum}' filename.txt
+
+    topic-5:
+      title: |
+        Using Sed for Text Substitution
+      code: |
+        # Replace a string in a file
+        sed -i 's/old_string/new_string/g' filename.txt
+        
+        # Delete lines matching a pattern
+        sed '/pattern/d' filename.txt
+
+    topic-6:
+      title: |
+        Networking Commands (ping, netstat, etc.)
+      code: |
+        # Check connectivity to a remote host
+        ping google.com
+        
+        # View all network connections
+        netstat -tuln
+        
+        # Display IP address information
+        ifconfig
+        
+        # Show routing table
+        route -n
+
+    topic-7:
+      title: |
+        File Compression and Archiving
+      code: |
+        # Create a tar archive
+        tar -cvf archive.tar /path/to/files
+        
+        # Extract a tar archive
+        tar -xvf archive.tar
+        
+        # Compress a file with gzip
+        gzip filename.txt
+        
+        # Decompress a gzip file
+        gunzip filename.txt.gz

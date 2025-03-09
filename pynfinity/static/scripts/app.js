@@ -113,3 +113,4 @@ jokeout();
 $('#git_basics').click();
 $('#py_basics').click();
 $('#sql_basics').click();
+$('#code_basics').click();
