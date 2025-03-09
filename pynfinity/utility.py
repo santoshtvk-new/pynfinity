@@ -121,7 +121,12 @@ def content_to_html():
     for crs in courses.keys():
         courses[crs]["icon"] = join(images_directory, courses[crs]["icon"])
         courses[crs]["content"] = f"{flask.request.base_url}/courses/{crs}"
-        courses[crs]["description"] = str(courses[crs]["description"]).replace('\n', '<br>')
+        desc = str(courses[crs]["description"]).replace('\n', '<br>')
+        for w in ['Key Topics Covered:', 'Basics:', 'Intermediate:', 'Advanced:']:
+            if w in desc:
+                desc = desc.replace(w, f'<b>{w}</b>')
+
+        courses[crs]["description"] = desc
     print(courses.keys())
     il = list(courses.items())
     return [dict(il[i:i + 3]) for i in range(0, len(il), 3)]

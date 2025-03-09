@@ -523,7 +523,7 @@ list-style-type: none;
 }
 
 .course_icon .card-text{
-    font-family: cursive;
+    font-family: 'Handlee', cursive;
     color: var(--choco);
     font-size: 1.4rem;
 }
