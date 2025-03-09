@@ -14,7 +14,6 @@ try:
     import pynfinity.utility as ut
 except ModuleNotFoundError:
     import utility as ut
-
 from flask import Flask
 
 app = Flask(__name__)
@@ -69,9 +68,6 @@ def all_coding_stuff(language="python"):
     return python_complete_stuff
 
 
-print(all_coding_stuff().keys())
-
-
 @app.route('/contact')
 def contact():
     """Renders the contact page."""
@@ -79,28 +75,6 @@ def contact():
         'contact.html',
         title="☎ Video Call for you",
         year=datetime.now().year,
-    )
-
-
-@app.route('/problems')
-def problems():
-    """Renders the problems page."""
-    return render_template(
-        'problems.html',
-        title='Coding Challenges',
-        year=datetime.now().year,
-        message='Let\'s Brain-Storm !!'
-    )
-
-
-@app.route('/experiment')
-def experiment():
-    """Renders the experiment page."""
-    return render_template(
-        'experiment.html',
-        title='Embedded and Python Projects',
-        year=datetime.now().year,
-        message='Let\'s Brain-Storm !!'
     )
 
 
@@ -112,36 +86,4 @@ def about():
         title='About',
         year=datetime.now().year,
         message='Few points about me...'
-    )
-
-
-@app.route('/git')
-def gitcmds():
-    return render_template(
-        'git.html',
-        title='Git Commands Tutorial',
-        year=datetime.now().year,
-        topics_tree=ut.git_menu_list(),
-        topics_content=ut.git_content(),
-        message='Master yourself with Git Basics to Advance'
-    )
-
-
-@app.route('/learn/linux')
-def lnxcmds():
-    return render_template(
-        'linux.html',
-        title='Linux Commands Tutorial',
-        year=datetime.now().year,
-        message='Master yourself with Linux Shell Commands'
-    )
-
-
-@app.route('/learn/embedded_systems')
-def embcmds():
-    return render_template(
-        'embedded.html',
-        title='Embedded Systems Tutorial',
-        year=datetime.now().year,
-        message='Master yourself with Concepts of Embedded Systems'
     )

@@ -3,6 +3,7 @@ This script runs the pynfinity application using a development server.
 """
 
 from os import environ
+
 from pynfinity.views import app
 
 if __name__ == '__main__':

@@ -38,8 +38,8 @@
                 <div>
                     <div class="deck">Word of the day!</div>
                     <br/>
-                    <input id="search_word" class="searchword" type="text" value="Welcome" name="search">
-                    <img onclick="findout()" id="sb" src="static/bg/search.svg" alt="search-symbol"/>
+                    <input class="searchword" id="search_word" name="search" type="text" value="Welcome">
+                    <img alt="search-symbol" id="sb" onclick="findout()" src="static/bg/search.svg"/>
                 </div>
                 <div class="wordperday">
                     <h2 id="title_word" onclick="playphonetics()">HELLO 🔊</h2>
@@ -53,34 +53,37 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-12 eagerbelow" id="pynsheets"   data-toggle="tooltip" data-placement="bottom" title="Expand each section below.">
+    <div class="col-sm-12 eagerbelow" data-placement="bottom" data-toggle="tooltip" id="pynsheets"
+         title="Expand each section below.">
         Python Cheatsheets
     </div>
 </div>
 
 
-<div id="accordion" data-toggle="tooltip" data-placement="top" title="Expand Each Section to learn more!">
-{% for k, code_structure in py_structure_details.items() %}
+<div data-placement="top" data-toggle="tooltip" id="accordion" title="Expand Each Section to learn more!">
+    {% for k, code_structure in py_structure_details.items() %}
     <div class="card">
         <div class="card-header" id="heading{{k}}">
             <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{k}}" aria-expanded="false"
-                        aria-controls="collapse{{k}}" id="py_{{k}}">
+                <button aria-controls="collapse{{k}}" aria-expanded="false" class="btn btn-link collapsed"
+                        data-target="#collapse{{k}}"
+                        data-toggle="collapse" id="py_{{k}}">
                     {{k.upper()}} ⏩
                 </button>
             </h5>
         </div>
 
-        <div id="collapse{{k}}" class="collapse" aria-labelledby="heading{{k}}" data-parent="#accordion">
+        <div aria-labelledby="heading{{k}}" class="collapse" data-parent="#accordion" id="collapse{{k}}">
             <div class="card-body">
 
                 {% for key, value in code_structure.items() %}
                 <div class="row">
-                    <div class="col-sm-6">
-                        {{value|safe}}
-                    </div>
+
                     <div class="col-sm-6 code_explanation">
                         {{key|safe}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{value|safe}}
                     </div>
                 </div>
                 {% endfor %}
@@ -88,30 +91,32 @@
             </div>
         </div>
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 
 <div class="row">
-    <div class="col-sm-12 eagerbelow" id="pynsqlsheets"  data-toggle="tooltip" data-placement="bottom" title="Expand each section below.">
+    <div class="col-sm-12 eagerbelow" data-placement="bottom" data-toggle="tooltip" id="pynsqlsheets"
+         title="Expand each section below.">
         SQL Cheatsheets
     </div>
 </div>
 
 
-<div id="accordion2" data-toggle="tooltip" data-placement="top" title="Expand Each Section to learn more!">
-{% for k, code_structure in sql_structure_details.items() %}
+<div data-placement="top" data-toggle="tooltip" id="accordion2" title="Expand Each Section to learn more!">
+    {% for k, code_structure in sql_structure_details.items() %}
     <div class="card">
         <div class="card-header" id="heading_{{k}}">
             <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse_{{k}}" aria-expanded="false"
-                        aria-controls="collapse_{{k}}" id="sql_{{k}}">
+                <button aria-controls="collapse_{{k}}" aria-expanded="false" class="btn btn-link collapsed"
+                        data-target="#collapse_{{k}}"
+                        data-toggle="collapse" id="sql_{{k}}">
                     {{k.upper()}} ⏩
                 </button>
             </h5>
         </div>
 
-        <div id="collapse_{{k}}" class="collapse" aria-labelledby="heading_{{k}}" data-parent="#accordion">
+        <div aria-labelledby="heading_{{k}}" class="collapse" data-parent="#accordion" id="collapse_{{k}}">
             <div class="card-body">
 
                 {% for key, value in code_structure.items() %}
@@ -128,29 +133,31 @@
             </div>
         </div>
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 <div class="row">
-    <div class="col-sm-12 eagerbelow" id="pyngitsheets"  data-toggle="tooltip" data-placement="bottom" title="Expand each section below.">
+    <div class="col-sm-12 eagerbelow" data-placement="bottom" data-toggle="tooltip" id="pyngitsheets"
+         title="Expand each section below.">
         GIT Version Control Cheatsheets
     </div>
 </div>
 
 
-<div id="accordion3" data-toggle="tooltip" data-placement="top" title="Expand Each Section to learn more!">
-{% for k, code_structure in git_structure_details.items() %}
+<div data-placement="top" data-toggle="tooltip" id="accordion3" title="Expand Each Section to learn more!">
+    {% for k, code_structure in git_structure_details.items() %}
     <div class="card">
         <div class="card-header" id="heading__{{k}}">
             <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse__{{k}}" aria-expanded="false"
-                        aria-controls="collapse__{{k}}" id="git_{{k}}">
+                <button aria-controls="collapse__{{k}}" aria-expanded="false" class="btn btn-link collapsed"
+                        data-target="#collapse__{{k}}"
+                        data-toggle="collapse" id="git_{{k}}">
                     {{k.upper()}} ⏩
                 </button>
             </h5>
         </div>
 
-        <div id="collapse__{{k}}" class="collapse" aria-labelledby="heading__{{k}}" data-parent="#accordion">
+        <div aria-labelledby="heading__{{k}}" class="collapse" data-parent="#accordion" id="collapse__{{k}}">
             <div class="card-body">
 
                 {% for key, value in code_structure.items() %}
@@ -167,7 +174,7 @@
             </div>
         </div>
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 <div class="row">
