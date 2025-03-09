@@ -55,19 +55,13 @@
             <div class="card-body">
                 <h5 class="card-title">{{topic[k]['title']}}</h5>
                 <p class="card-text">{{topic[k]['description']|safe}}</p>
-                <a href="{{topic[k]['content']}}" class="btn btn-primary">Jump to Course</a>
+                <a target="_blank" href="{{topic[k]['content']}}" class="btn btn-primary">Jump to Course</a>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
 {% endfor %}
-
-<div class="row">
-    <div class="col-sm-12 eagerbelow">
-        My GITHUB Repo: <a href="https://github.com/santoshtvk-new/">Daily Dose</a> 💻
-    </div>
-</div>
 
 
 {% endblock %}
