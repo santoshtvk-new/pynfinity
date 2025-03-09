@@ -26,7 +26,7 @@ available_lexer = {
     'sql': SqlLexer(),
     'linux_shell': BashLexer(),
     'java': JavaLexer(),
-    'selenium': JavaLexer(),
+    'selenium': PythonLexer(),
     'pandas': PythonLexer(),
     'c': CLexer(),
     'cpp': CppLexer()
