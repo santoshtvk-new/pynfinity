@@ -42,69 +42,91 @@
     </style>
 </head>
 <body>
-    <h1>API Playground</h1>
-    <p>[EDUCATIONAL AND PRACTISE PURPOSE] -- Created an endpoint for Learning & Playing on FLASK-REST-API</p>
-    <p>USE Postman/Insomnia or any preferred IDE/language to HIT ENDPOINT: /test_api/datatype/expected_status_code</p>
-    <p>HELP MENTIONED in /test_api/help</p>
+<h1>API Playground</h1>
+<p>[EDUCATIONAL AND PRACTISE PURPOSE] -- Created an endpoint for Learning & Playing on FLASK-REST-API</p>
+<p>USE Postman/Insomnia or any preferred IDE/language to HIT ENDPOINT: welcome/testapi/datatype/expected_status_code</p>
+<p>HELP MENTIONED in <a href="https://pynfinity.com/welcome/testapi/help">HELP_JSON</a></p>
 
-    <div class="section">
-        <div class="method" onclick="toggleDetails('delete')">DELETE Method</div>
-        <div id="delete" class="details">
-            <p><strong>Endpoint:</strong> /test_api/&lt;icon-names&gt;/&lt;status_code_expected&gt;</p>
-            <p><strong>Examples:</strong> /test_api/cpp.svg, /test_api/pandas, /test_api/pandas/202</p>
-        </div>
+<div class="section">
+    <div class="method" onclick="toggleDetails('delete')">DELETE Method</div>
+    <div id="delete" class="details">
+        <p><strong>Endpoint:</strong> /welcome/testapi/&lt;icon-names&gt;/&lt;status_code_expected&gt;</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/cpp.svg</a></li>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/pandas</a></li>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/pandas/202</a></li>
+        </ul>
     </div>
+</div>
 
-    <div class="section">
-        <div class="method" onclick="toggleDetails('get')">GET Method</div>
-        <div id="get" class="details">
-            <p><strong>Endpoint:</strong> /test_api/&lt;datatype&gt;/&lt;status_code_expected&gt;</p>
-            <p><strong>Datatypes:</strong> JSON, XML, TEXT</p>
-            <p><strong>Examples:</strong> /test_api/json, /test_api/text/204, /test_api/xml/400</p>
-        </div>
+<div class="section">
+    <div class="method" onclick="toggleDetails('get')">GET Method</div>
+    <div id="get" class="details">
+        <p><strong>Endpoint:</strong> /welcome/testapi/&lt;datatype&gt;/&lt;status_code_expected&gt;</p>
+        <p><strong>Datatypes:</strong> JSON, XML, TEXT</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/json</a></li>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/text/204</a></li>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/xml/400</a></li>
+        </ul>
     </div>
+</div>
 
-    <div class="section">
-        <div class="method" onclick="toggleDetails('query')">GET Method with Query Params</div>
-        <div id="query" class="details">
-            <p><strong>Endpoint:</strong> /test_api/QP?key=value</p>
-            <p><strong>Examples:</strong> /test_api/QP?user=santosh, /test_api/qp?user=&amp;age=</p>
-        </div>
+<div class="section">
+    <div class="method" onclick="toggleDetails('query')">GET Method with Query Params</div>
+    <div id="query" class="details">
+        <p><strong>Endpoint:</strong> /welcome/testapi/QP?key=value</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/QP?user=santosh</a></li>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/qp?user=&amp;age=</a></li>
+        </ul>
     </div>
+</div>
 
-    <div class="section">
-        <div class="method" onclick="toggleDetails('patch')">PATCH Method</div>
-        <div id="patch" class="details">
-            <p><strong>Endpoint:</strong> /test_api/&lt;icon-names&gt;/&lt;status_code_expected&gt;</p>
-            <p><strong>Examples:</strong> /test_api/cpp.svg, /test_api/pandas</p>
-            <p><strong>Payload:</strong> JSON data for unique identifier</p>
-        </div>
+<div class="section">
+    <div class="method" onclick="toggleDetails('patch')">PATCH Method</div>
+    <div id="patch" class="details">
+        <p><strong>Endpoint:</strong> /welcome/testapi/&lt;icon-names&gt;/&lt;status_code_expected&gt;</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/cpp.svg</a></li>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/pandas</a></li>
+        </ul>
+        <p><strong>Payload:</strong> JSON data for unique identifier</p>
     </div>
+</div>
 
-    <div class="section">
-        <div class="method" onclick="toggleDetails('post')">POST Method</div>
-        <div id="post" class="details">
-            <p><strong>Endpoint:</strong> /test_api/post</p>
-            <p><strong>Payload:</strong> JSON | At least empty brackets {} are required</p>
-        </div>
+<div class="section">
+    <div class="method" onclick="toggleDetails('post')">POST Method</div>
+    <div id="post" class="details">
+        <p><strong>Endpoint:</strong> /welcome/testapi/post</p>
+        <p><strong>Payload:</strong> JSON | At least empty brackets {} are required</p>
     </div>
+</div>
 
-    <div class="section">
-        <div class="method" onclick="toggleDetails('put')">PUT Method</div>
-        <div id="put" class="details">
-            <p><strong>Endpoint:</strong> /test_api/&lt;icon-names&gt;/&lt;status_code_expected&gt;</p>
-            <p><strong>Examples:</strong> /test_api/cpp.svg, /test_api/pandas</p>
-            <p><strong>Payload:</strong> JSON data for unique identifier</p>
-        </div>
+<div class="section">
+    <div class="method" onclick="toggleDetails('put')">PUT Method</div>
+    <div id="put" class="details">
+        <p><strong>Endpoint:</strong> /welcome/testapi/&lt;icon-names&gt;/&lt;status_code_expected&gt;</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/cpp.svg</a></li>
+            <li><a  target="_blank" href="#">https://pynfinity.com/welcome/testapi/pandas</a></li>
+        </ul>
+        <p><strong>Payload:</strong> JSON data for unique identifier</p>
     </div>
+</div>
 
-    <div class="warning">⚠ Data beyond specified rules is ignored.</div>
+<div class="warning">⚠ Data beyond specified rules is ignored.</div>
 
-    <script>
-        function toggleDetails(id) {
-            var element = document.getElementById(id);
-            element.style.display = element.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+<script>
+    function toggleDetails(id) {
+        var element = document.getElementById(id);
+        element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
 </body>
 </html>

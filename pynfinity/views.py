@@ -100,54 +100,54 @@ def api_testing(datatype="", sc_expected=200):
             "METHODS ACCEPTED": ["GET", "POST", 'PATCH', 'PUT', 'DELETE'],
             "USAGE": {
                 "GET METHOD": {
-                    "ENDPOINT": "/test_api/<datatype>/<status_code_expected>",
+                    "ENDPOINT": "https://pynfinity.com/welcome/testapi/<datatype>/<status_code_expected>",
                     "DATATYPES": "JSON/XML/TEXT",
                     "STATUS_CODE_EXPECTED": "Any Integer Number [To play around different status_codes and its Names]",
                     "Examples": [
-                        "/test_api/json"
-                        "/test_api/text/204"
-                        "/test_api/xml/400"
+                        "https://pynfinity.com/welcome/testapi/json"
+                        "https://pynfinity.com/welcome/testapi/text/204"
+                        "https://pynfinity.com/welcome/testapi/xml/400"
                     ]
                 },
                 "GET METHOD WITH QUERY PARAM": {
-                    "ENDPOINT": "/test_api/QP?key=value",
+                    "ENDPOINT": "https://pynfinity.com/welcome/testapi/QP?key=value",
                     "Examples": [
-                        "/test_api/QP?user=santosh",
-                        "/test_api/qp?user=&age=",
-                        "/test_api/qp?user=santosh&age=30"
+                        "https://pynfinity.com/welcome/testapi/QP?user=santosh",
+                        "https://pynfinity.com/welcome/testapi/qp?user=&age=",
+                        "https://pynfinity.com/welcome/testapi/qp?user=santosh&age=30"
                     ]
                 },
                 "POST METHOD": {
-                    "ENDPOINT": "/test_api/post",
+                    "ENDPOINT": "https://pynfinity.com/welcome/testapi/post",
                     "PAYLOAD": "JSON | [Mandatory: at-least empty brackets are required Ex: {}",
                     "---UPCOMING---": "---MULTI_FORM DATA | FILES | DIFFERENT FORMATS---"
                 },
                 "PUT METHOD": {
-                    "ENDPOINT": "/test_api/<icon-names as unique identifier>/<status_code_expected>",
+                    "ENDPOINT": "https://pynfinity.com/welcome/testapi/<icon-names as unique identifier>/<status_code_expected>",
                     "Example": [
-                        "/test_api/cpp.svg",
-                        "/test_api/pandas",
-                        "/test_api/pandas/202",
+                        "https://pynfinity.com/welcome/testapi/cpp.svg",
+                        "https://pynfinity.com/welcome/testapi/pandas",
+                        "https://pynfinity.com/welcome/testapi/pandas/202",
                     ],
                     "PAYLOAD": "JSON data for unique_identifier mentioned",
                     "ICON_NAMES|UNIQUE-IDENTIFIER": "Refer GET JSON METHOD"
                 },
                 "PATCH METHOD": {
-                    "ENDPOINT": "/test_api/<icon-names as unique identifier>/<status_code_expected>",
+                    "ENDPOINT": "https://pynfinity.com/welcome/testapi/<icon-names as unique identifier>/<status_code_expected>",
                     "Example": [
-                        "/test_api/cpp.svg",
-                        "/test_api/pandas",
-                        "/test_api/pandas/202",
+                        "https://pynfinity.com/welcome/testapi/cpp.svg",
+                        "https://pynfinity.com/welcome/testapi/pandas",
+                        "https://pynfinity.com/welcome/testapi/pandas/202",
                     ],
                     "PAYLOAD": "JSON data for any/all keys in unique_identifier mentioned",
                     "ICON_NAMES|UNIQUE-IDENTIFIER": "Refer GET JSON METHOD"
                 },
                 "DELETE METHOD": {
-                    "ENDPOINT": "/test_api/<icon-names as unique identifier>/<status_code_expected>",
+                    "ENDPOINT": "https://pynfinity.com/welcome/testapi/<icon-names as unique identifier>/<status_code_expected>",
                     "Example": [
-                        "/test_api/cpp.svg",
-                        "/test_api/pandas",
-                        "/test_api/pandas/202",
+                        "https://pynfinity.com/welcome/testapi/cpp.svg",
+                        "https://pynfinity.com/welcome/testapi/pandas",
+                        "https://pynfinity.com/welcome/testapi/pandas/202",
                     ],
                     "ICON_NAMES|UNIQUE-IDENTIFIER": "Refer GET JSON METHOD"
                 }
