@@ -42,7 +42,7 @@ def home():
         year=datetime.now().year,
         creator=data,
         course_details=ut.content_to_html(),
-        app_navigate=flask.request.base_url + '/testapi'
+        app_navigate=str(flask.request.base_url).replace('home/', '') + '/testapi'
     )
 
 
