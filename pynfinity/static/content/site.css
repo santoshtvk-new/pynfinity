@@ -505,7 +505,7 @@ list-style-type: none;
 
 .course_icon .card-title{
     font-family: 'Comfortaa', cursive;
-    background: var(--choco);
+    background: var(--choco2);
     color: var(--whitish);
     padding: 5px;
     font-size: 1.5rem;

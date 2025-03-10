@@ -78,16 +78,19 @@ def about():
     )
 
 
-@app.route('/test_api/')
-def api_testing_ui():
+@app.route('/testapi')
+def testapi():
     """Renders the api_test_ui page."""
     return render_template(
-        'api_playground.html'
+        'api_playground.html',
+        title='API',
+        year=datetime.now().year,
+        message='API Playground'
     )
 
 
-@app.route('/test_api/<datatype>', methods=["GET", "POST", 'PATCH', 'PUT', 'DELETE'])
-@app.route('/test_api/<datatype>/<sc_expected>', methods=["GET", "POST", 'PATCH', 'PUT', 'DELETE'])
+@app.route('/testapi/<datatype>', methods=["GET", "POST", 'PATCH', 'PUT', 'DELETE'])
+@app.route('/testapi/<datatype>/<sc_expected>', methods=["GET", "POST", 'PATCH', 'PUT', 'DELETE'])
 def api_testing(datatype="", sc_expected=200):
     if datatype == "help":
         return jsonify({
