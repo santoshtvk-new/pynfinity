@@ -52,5 +52,11 @@
     "content": "",
     "title": "Complete C++ language Syntax and examples for quick reference",
     "description": "Classes, objects, file handling, and functions, along with advanced concepts like inheritance."
+  },
+  "csharp": {
+    "icon": "csharp.svg",
+    "content": "",
+    "title": "Complete C# [C Sharp] language Syntax and examples for quick reference",
+    "description": "Key Topics Covered:\nBasics: Printing to the console, working with variables, arithmetic operations, and conditional statements.\nIntermediate: Functions, loops, arrays, object-oriented programming (OOP) basics like classes, and exception handling.\nAdvanced: Inheritance, polymorphism, interfaces, LINQ, file handling, delegates, lambda expressions, and async/await for asynchronous programming."
   }
 }

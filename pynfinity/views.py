@@ -2,7 +2,9 @@
 Routes and views for the flask application.
 """
 from datetime import datetime
+from os.path import join
 
+import flask
 from flask import render_template, request, jsonify
 from pygments.formatters import HtmlFormatter
 
@@ -39,7 +41,8 @@ def home():
         page_load_params=page_load_params,
         year=datetime.now().year,
         creator=data,
-        course_details=ut.content_to_html()
+        course_details=ut.content_to_html(),
+        app_navigate=flask.request.base_url + '/testapi'
     )
 
 
@@ -83,9 +86,8 @@ def testapi():
     """Renders the api_test_ui page."""
     return render_template(
         'api_playground.html',
-        title='API',
-        year=datetime.now().year,
-        message='API Playground'
+        title='API Playground',
+        year=datetime.now().year
     )
 
 

@@ -101,22 +101,3 @@ d1 = new Date(2014, 07, 1)
 d2 = new Date()
 $("#tot_exp").html(diff_years(d2, d1))
 
-window.onload = () => {
-            const api = new JitsiMeetExternalAPI("8x8.vc", {
-              roomName: "vpaas-magic-cookie-274108d3aae44a759945a1a602cc50ee/SampleAppExperiencedCounsellorsKeyGenuinely",
-              parentNode: document.querySelector('#jaas-container'),
-							// Make sure to include a JWT if you intend to record,
-							// make outbound calls or use any other premium features!
-							// jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtMjc0MTA4ZDNhYWU0NGE3NTk5NDVhMWE2MDJjYzUwZWUvZjNjNTllLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJpYXQiOjE3MjcxNzI5NTQsImV4cCI6MTcyNzE4MDE1NCwibmJmIjoxNzI3MTcyOTQ5LCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMjc0MTA4ZDNhYWU0NGE3NTk5NDVhMWE2MDJjYzUwZWUiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwic2lwLW91dGJvdW5kLWNhbGwiOmZhbHNlLCJ0cmFuc2NyaXB0aW9uIjpmYWxzZSwicmVjb3JkaW5nIjpmYWxzZX0sInVzZXIiOnsiaGlkZGVuLWZyb20tcmVjb3JkZXIiOmZhbHNlLCJtb2RlcmF0b3IiOnRydWUsIm5hbWUiOiJUZXN0IFVzZXIiLCJpZCI6Imdvb2dsZS1vYXV0aDJ8MTExNDM4OTI5NDc4ODUwMjE2MTc1IiwiYXZhdGFyIjoiIiwiZW1haWwiOiJ0ZXN0LnVzZXJAY29tcGFueS5jb20ifX0sInJvb20iOiIqIn0.sNSS48jMXwW0vkZJ4BbL1nXesdB2rExkBr3S-XyWhfWqD0_Xqla7VRbL9qvz7RY9XpGFPCEa0UnKUA7BjI938YmV9qQilLKxw69I1Yk1KBIhGeJBf9WAE6vrRtdSG99JR8kHAUmh0sujEFIDB5_NW54TaQAAntbSjR_es_3iXb74dNxtlQIz8Az9He_hfcs_6vl9vu9j82OHJfMXJgBPcaalZ5W6gSFoW4eXoYIL_AOBiz14FEsXqc-8-b9PdteVdMwp29NeoriSzf1Eyl-6R6NOvWGemIAmaJkTpxolgySGQ0NLWnlKKp7Rrcq9eioy1Mn6fIXaErt8kjno-YXc0w"
-            });
-          }
-
-$("#jaas-container").css('pointer-events','none');
-
-$(document).ready(function() {
-    var storedInput = localStorage.getItem('author');
-    if (storedInput=='santoshtvk') {
-        $("#jaas-container").css('pointer-events','');
-    }
-});
-

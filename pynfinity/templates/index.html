@@ -62,7 +62,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{topic[k]['title']}}</h5>
                 <p class="card-text">{{topic[k]['description']|safe}}</p>
-                <a target="_blank" href="{{topic[k]['content']}}" class="btn btn-primary">Jump to Course</a>
+                <a target="_blank" href="{{topic[k]['content']}}" class="btn btn-primary" style="width:100%">Jump to Course</a>
             </div>
         </div>
     </div>
@@ -70,9 +70,23 @@
 </div>
 {% endfor %}
 
-<div class="row">
+<div class="row" style="margin-top:100px">
     <div class="col-sm-12 eagerbelow">
         Keeps AI Away 🧑‍🦯‍➡️ 🤖
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4 course_icon">
+        <a target="_blank" href="{{app_navigate}}" class="play_links">
+            <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="static/bg/api.png" alt="Course Card image" width="250px">
+                <div class="card-body">
+                    <h5 class="card-title">REST-API Playground</h5>
+                    <p class="card-text">The API Playground is a <b>REST API testing environment supporting GET, POST, PATCH, PUT, and DELETE methods</b>. <br>It allows users to <b>experiment with different status codes</b>, data formats, query parameters, and payloads. <br>Each method follows a structured endpoint format with examples for easy testing. <br><b>This playground helps developers understand API</b> responses dynamically. 🚀</p>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
 

@@ -2105,3 +2105,457 @@ cpp:
 
             return 0;
         }
+
+csharp:
+  basics:
+    topic-1:
+      title: |
+        Print "Hello, World!" to the Console
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                Console.WriteLine("Hello, World!");
+            }
+        }
+
+    topic-2:
+      title: |
+        Variables and Data Types
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                string name = "Santosh";
+                int age = 25;
+                double price = 19.99;
+                bool isLearning = true;
+
+                Console.WriteLine($"Name: {name}");
+                Console.WriteLine($"Age: {age}");
+                Console.WriteLine($"Price: {price}");
+                Console.WriteLine($"Is Learning: {isLearning}");
+            }
+        }
+
+    topic-3:
+      title: |
+        Arithmetic Operations in C#
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                int a = 10, b = 5;
+
+                Console.WriteLine("Addition: " + (a + b));
+                Console.WriteLine("Subtraction: " + (a - b));
+                Console.WriteLine("Multiplication: " + (a * b));
+                Console.WriteLine("Division: " + (a / b));
+                Console.WriteLine("Modulus: " + (a % b));
+            }
+        }
+
+    topic-4:
+      title: |
+        Conditional Statements (if-else)
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                int age = 18;
+
+                if (age >= 18)
+                {
+                    Console.WriteLine("Eligible for voting");
+                }
+                else
+                {
+                    Console.WriteLine("Not eligible for voting");
+                }
+            }
+        }
+
+    topic-5:
+      title: |
+        Switch Case Example
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                int day = 3;
+                string dayName;
+
+                switch (day)
+                {
+                    case 1:
+                        dayName = "Monday";
+                        break;
+                    case 2:
+                        dayName = "Tuesday";
+                        break;
+                    case 3:
+                        dayName = "Wednesday";
+                        break;
+                    case 4:
+                        dayName = "Thursday";
+                        break;
+                    case 5:
+                        dayName = "Friday";
+                        break;
+                    default:
+                        dayName = "Weekend";
+                        break;
+                }
+
+                Console.WriteLine("Day: " + dayName);
+            }
+        }
+
+  intermediate:
+    topic-1:
+      title: |
+        Loops in C#
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                // For Loop
+                for (int i = 1; i <= 5; i++)
+                {
+                    Console.WriteLine($"Santosh learning C# - Iteration: {i}");
+                }
+
+                // While Loop
+                int count = 1;
+                while (count <= 3)
+                {
+                    Console.WriteLine($"Dhruv exploring C# - Attempt: {count}");
+                    count++;
+                }
+            }
+        }
+
+    topic-2:
+      title: |
+        Arrays in C#
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                string[] names = { "Santosh", "Kumar", "Dhruv", "Pynfinity" };
+
+                for (int i = 0; i < names.Length; i++)
+                {
+                    Console.WriteLine($"Name {i + 1}: {names[i]}");
+                }
+            }
+        }
+
+    topic-3:
+      title: |
+        Functions in C#
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Greet(string name)
+            {
+                Console.WriteLine($"Hello, {name}! Welcome to C#.");
+            }
+
+            static void Main()
+            {
+                Greet("Santosh");
+                Greet("Kumar");
+            }
+        }
+
+    topic-4:
+      title: |
+        Object-Oriented Programming (OOP) Concepts
+      code: |
+        using System;
+
+        class Person
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+
+            // Constructor
+            public Person(string name, int age)
+            {
+                Name = name;
+                Age = age;
+            }
+
+            public void Introduce()
+            {
+                Console.WriteLine($"Hi, my name is {Name} and I am {Age} years old.");
+            }
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                Person person1 = new Person("Santosh", 25);
+                Person person2 = new Person("Kumar", 30);
+
+                person1.Introduce();
+                person2.Introduce();
+            }
+        }
+
+    topic-5:
+      title: |
+        Handling Exceptions in C#
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                try
+                {
+                    int[] numbers = { 1, 2, 3 };
+                    Console.WriteLine(numbers[5]); // Index out of range
+                }
+                catch (IndexOutOfRangeException ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("This block always runs.");
+                }
+            }
+        }
+
+  advanced:
+    topic-1:
+      title: |
+        Inheritance in C#
+      code: |
+        using System;
+
+        class Animal
+        {
+            public string Name { get; set; }
+
+            public void Speak()
+            {
+                Console.WriteLine($"{Name} makes a sound.");
+            }
+        }
+
+        class Dog : Animal
+        {
+            public void Bark()
+            {
+                Console.WriteLine($"{Name} barks.");
+            }
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                Dog dog = new Dog();
+                dog.Name = "Buddy";
+                dog.Speak();
+                dog.Bark();
+            }
+        }
+
+    topic-2:
+      title: |
+        Polymorphism in C#
+      code: |
+        using System;
+
+        class Animal
+        {
+            public virtual void Speak()
+            {
+                Console.WriteLine("The animal makes a sound.");
+            }
+        }
+
+        class Dog : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("The dog barks.");
+            }
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                Animal myAnimal = new Animal();
+                myAnimal.Speak();
+
+                Dog myDog = new Dog();
+                myDog.Speak();
+            }
+        }
+
+    topic-3:
+      title: |
+        Interfaces in C#
+      code: |
+        using System;
+
+        interface IDriveable
+        {
+            void Drive();
+        }
+
+        class Car : IDriveable
+        {
+            public void Drive()
+            {
+                Console.WriteLine("The car is driving.");
+            }
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                IDriveable myCar = new Car();
+                myCar.Drive();
+            }
+        }
+
+    topic-4:
+      title: |
+        LINQ (Language Integrated Query) in C#
+      code: |
+        using System;
+        using System.Linq;
+
+        class Program
+        {
+            static void Main()
+            {
+                int[] numbers = { 5, 10, 15, 20, 25 };
+
+                var result = from number in numbers
+                             where number > 10
+                             select number;
+
+                foreach (var number in result)
+                {
+                    Console.WriteLine(number);
+                }
+            }
+        }
+
+    topic-5:
+      title: |
+        File Handling in C#
+      code: |
+        using System;
+        using System.IO;
+
+        class Program
+        {
+            static void Main()
+            {
+                string filePath = "example.txt";
+
+                // Writing to a file
+                File.WriteAllText(filePath, "This is a test file written by Santosh.");
+
+                // Reading from the file
+                string fileContent = File.ReadAllText(filePath);
+                Console.WriteLine(fileContent);
+            }
+        }
+
+    topic-6:
+      title: |
+        Delegates in C#
+      code: |
+        using System;
+
+        delegate void GreetDelegate(string name);
+
+        class Program
+        {
+            static void Greet(string name)
+            {
+                Console.WriteLine($"Hello, {name}!");
+            }
+
+            static void Main()
+            {
+                GreetDelegate greet = new GreetDelegate(Greet);
+                greet("Santosh");
+            }
+        }
+
+    topic-7:
+      title: |
+        Lambda Expressions in C#
+      code: |
+        using System;
+
+        class Program
+        {
+            static void Main()
+            {
+                Func<int, int, int> add = (x, y) => x + y;
+                Console.WriteLine($"Sum: {add(5, 10)}");
+
+                Func<string, bool> isShortName = name => name.Length <= 5;
+                Console.WriteLine($"Is 'Dhruv' short name? {isShortName("Dhruv")}");
+            }
+        }
+
+    topic-8:
+      title: |
+        Async and Await in C#
+      code: |
+        using System;
+        using System.Threading.Tasks;
+
+        class Program
+        {
+            static async Task Main()
+            {
+                await DoTaskAsync();
+                Console.WriteLine("Main method complete");
+            }
+
+            static async Task DoTaskAsync()
+            {
+                await Task.Delay(2000);
+                Console.WriteLine("Task complete after delay");
+            }
+        }

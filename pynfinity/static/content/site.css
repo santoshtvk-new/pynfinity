@@ -527,3 +527,38 @@ list-style-type: none;
     color: var(--choco);
     font-size: 1.4rem;
 }
+
+
+
+
+        .api_play_section {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .api_play_method {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+            background: #f4f4f4;
+            border-radius: 4px;
+        }
+        .api_play_details {
+            display: block;
+            padding: 10px;
+            background: #fafafa;
+            border-top: 1px solid #ddd;
+        }
+        .api_play_warning {
+            background: #ffefc7;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .play_links {
+        text-decoration: none;
+        }
+        .play_links:hover {
+        text-decoration: none;
+        }
