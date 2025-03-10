@@ -101,3 +101,13 @@ d1 = new Date(2014, 07, 1)
 d2 = new Date()
 $("#tot_exp").html(diff_years(d2, d1))
 
+if(localStorage.getItem("flask_shown")) {
+  $('#flaskimage').hide();
+} else {
+  $('#flaskimage').show();
+  localStorage.setItem("flask_shown", "true");
+}
+
+$("#flaskimage").on("click", function(){
+  $('#flaskimage').hide();
+});
